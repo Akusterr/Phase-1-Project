@@ -1,0 +1,39 @@
+
+.main-wrapper {
+        background-color: #C5BDD9;
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 15px;
+        border: 1px solid;
+        opacity: 0.8;
+
+}
+.city-wrapper {
+    font-size: 20px;
+    color: black;
+    font-family: 'Ibarra Real Nova', serif;
+}
+
+
+.weekday {
+    font-size: 30px;
+    color: black;
+    font-family: 'Ibarra Real Nova', serif;
+}
+
+
+div {
+    color: black;
+    text-align: center;
+    background-color: #C5BDD9;
+    padding: 20px 10px 20px 10px;
+}
+
+body {
+    background-color: whitesmoke;
+    padding: 50px;
+}
+
+strong {
+    font-size: 25px;
+}
