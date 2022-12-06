@@ -273,7 +273,11 @@ const data = {
 ////////////////////
 // Global Variables
 ////////////////////
-let currentLocation = {};
+let currentLocation = {
+    city: "New York",
+    state: "New York",
+    zip: "10004"
+};
 
 // Temperature unit will default to Fahrenheit
 let currentTemperatureUnit = data.temperature_units[0];
@@ -325,6 +329,7 @@ const handleLocationSubmitByZipCode = (zipCode) => {
 }
 
 const handleLocationSubmitByCityState = (city, state) => {
+    // https://api.zippopotam.us/us/co/denver
     console.log(`https://api.zippopotam.us/us/${state}/${city}`);
     fetch(`api.zippopotam.us/us/${state}/${city}`)
         .then(resp => resp.json())
