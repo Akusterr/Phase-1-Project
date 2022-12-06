@@ -31,6 +31,10 @@
     display: flex;
 }
 
+body {
+    background-color: darkslategray;
+}
+ 
 div {
     color: black;
     text-align: center;
