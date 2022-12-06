@@ -1,10 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 // This will go into a seperate data.js file
 ///////////////////////////////////////////////////////////////////////////////
-
-
-
-
 const data = {
     weather_code: {
         "0": "clear sky",
@@ -278,9 +274,12 @@ const data = {
 // Global Variables
 ////////////////////
 let currentLocation = {
-    city: "New York",
+    city: "New York City",
     state: "New York",
-    zip: "10004"
+    state_abbreviation: "NY",
+    zip: "10004",
+    latitude: "40.6964",
+    longitude: "-74.0253"
 };
 
 // Temperature unit will default to Fahrenheit
@@ -293,6 +292,7 @@ let currentTemperatureUnit = data.temperature_units[0];
 const formLocation = document.querySelector("#location-form");
 const stateDropDown = document.querySelector("#state");
 const currentDay = document.querySelector("#current-day");
+const currentLocationP = document.querySelector("#location-information");
 const currentTemp = document.querySelector("#current-temp");
 const currentDescription = document.querySelector("#current-description");
 
@@ -312,12 +312,10 @@ formLocation.addEventListener("submit", (e) => {
 const handleLocationSubmit = (e) => {
     const zipCode = e.target["zip-code"].value;
     if (zipCode) {
-        console.log(`Zip code ${zipCode} entered.`);
         handleLocationSubmitByZipCode(zipCode);
     } else {
         const state = e.target.state.value;
         const city = e.target.city.value;
-        console.log(`${city}, ${state}`);
         handleLocationSubmitByCityState(city, state);
     }
 }
@@ -327,7 +325,7 @@ const handleLocationSubmitByZipCode = (zipCode) => {
         .then(resp => resp.json())
         .then(locationData => {
             console.log(locationData);
-            handleWeatherDataFromZipCode(locationData);
+            updateLocationFromZipCode(locationData);
         })
         .catch(`Could not fetch data for zip code ${zipCode}`);
 }
@@ -335,27 +333,50 @@ const handleLocationSubmitByZipCode = (zipCode) => {
 const handleLocationSubmitByCityState = (city, state) => {
     // https://api.zippopotam.us/us/co/denver
     console.log(`https://api.zippopotam.us/us/${state}/${city}`);
-    fetch(`api.zippopotam.us/us/${state}/${city}`)
+    fetch(`https://api.zippopotam.us/us/${state}/${city}`)
         .then(resp => resp.json())
-        .then(console.log(weatherData))
+        .then(locationData => {
+            console.log(locationData);
+            updateLocationFromCityState(locationData, city, state);
+        })
         .catch(`Could not fetch data for ${city}, ${state}`);
-        handleWeatherDataFromCityState(locationData);
+        
 }
 
-const handleWeatherDataFromZipCode = (locationData) => {
-    let latitude = locationData.places[0].latitude;
-    let longitude = locationData.places[0].longitude;
-    handleWeatherData(latitude, longitude);
+const updateLocationFromZipCode = (locationData) => {
+    currentLocation.city = locationData.places[0]["place name"];
+    currentLocation.state = locationData.places[0].state;
+    currentLocation.state_abbreviation = locationData.places[0]["state abbreviation"];
+    currentLocation.zip = locationData["post code"];
+    currentLocation.latitude = locationData.places[0].latitude;
+    currentLocation.longitude = locationData.places[0].longitude;
+
+    renderLocation();
+    getWeatherData(currentLocation);
 }
 
-const handleWeatherData = (latitude, longitude) => {
+const updateLocationFromCityState = (locationData, city, state) => {
+    currentLocation.city = city;
+    currentLocation.state = ""
+    currentLocation.state_abbreviation = state;
+    currentLocation.zip = locationData.places[0]["post code"];
+    currentLocation.latitude = locationData.places[0].latitude;
+    currentLocation.longitude = locationData.places[0].longitude;
+
+    renderLocation();
+    getWeatherData(currentLocation);
+}
+
+const getWeatherData = (location) => {
+    let latitude = location.latitude;
+    let longitude = location.longitude;
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,precipitation&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset&current_weather=true&temperature_unit=${currentTemperatureUnit.unit}&windspeed_unit=mph&precipitation_unit=inch&timeformat=unixtime&timezone=America%2FNew_York`)
     .then(resp => resp.json())
     .then(weatherData => {
         console.log(weatherData);
         renderCurrentWeather(weatherData);
     })
-    .catch(`Could not fetch weather data`);
+    .catch(`Could not fetch weather data for ${location.city}, ${location.state_abbreviation} ${location.zip}`);
 }
 
 const getDescriptionFromWeatherCode = (weatherData) => {
@@ -381,6 +402,12 @@ const renderStates = () => {
         stateDropDown.appendChild(option);
     })
 }
+
+const renderLocation = () => {
+    console.log(currentLocation);
+    currentLocationP.textContent = `${currentLocation.city}, ${currentLocation.state_abbreviation}`;
+}
+
 const renderCurrentWeather = (weatherData) => {
     currentDay.textContent = getWeekday(weatherData);
     currentTemp.textContent = `${weatherData.current_weather.temperature}${String.fromCodePoint(176)}${currentTemperatureUnit.abbreviation}`;
@@ -388,3 +415,5 @@ const renderCurrentWeather = (weatherData) => {
 }
 
 renderStates();
+renderLocation();
+getWeatherData(currentLocation);
