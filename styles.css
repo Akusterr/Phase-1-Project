@@ -38,10 +38,15 @@ div {
     padding: 20px 10px 20px 10px;
 }
 
-body {
+/*body {
     background-image: url('night-cloud.jpg');
 }
+*/
 
 strong {
     font-size: 25px;
+}
+
+#zip-code {
+    width: 50px;
 }
