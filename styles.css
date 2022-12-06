@@ -1,13 +1,13 @@
 
 .main-wrapper {
-    background-color: whitesmoke;
+    background-color: #C5BDD9;
     font-family: "Kalam", cursive;
     border-radius: 50px;
     border-color: whitesmoke;
     max-width: 700px;
     margin: 40px auto;
     padding: 15px;
-    opacity: 5;
+    opacity: 0.8;
 
 
 }
@@ -33,21 +33,21 @@
 
 body {
     background-color: darkslategray;
-
-   
-    /* background-image: url("./oriental-tiles.png");
-    background-repeat: repeat; */
 }
  
-
 div {
     color: black;
     text-align: center;
-    background-color: whitesmoke;
-    ;
+    background-color: #C5BDD9;
     padding: 20px 10px 20px 10px;
 }
 
+
+
 strong {
     font-size: 25px;
+}
+
+#zip-code {
+    width: 50px;
 }
