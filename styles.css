@@ -32,7 +32,11 @@
 }
 
 body {
-    background-color: #42385D;
+    background-color: darkslategray;
+
+   
+    /* background-image: url("./oriental-tiles.png");
+    background-repeat: repeat; */
 }
  
 
