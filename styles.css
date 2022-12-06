@@ -1,13 +1,13 @@
 
 .main-wrapper {
-    background-color: #C5BDD9;
+    background-color: whitesmoke;
     font-family: "Kalam", cursive;
     border-radius: 50px;
     border-color: whitesmoke;
     max-width: 700px;
     margin: 40px auto;
     padding: 15px;
-    opacity: 0.8;
+    opacity: 5;
 
 
 }
@@ -31,15 +31,17 @@
     display: flex;
 }
 
+body {
+    background-color: #42385D;
+}
+ 
+
 div {
     color: black;
     text-align: center;
-    background-color: #C5BDD9;
+    background-color: whitesmoke;
+    ;
     padding: 20px 10px 20px 10px;
-}
-
-body {
-    background-image: url('night-cloud.jpg');
 }
 
 strong {
