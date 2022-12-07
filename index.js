@@ -35,11 +35,11 @@ const data = {
     temperature_units: [
         {
             unit: "fahrenheit",
-            abbreviation: "F"
+            abbreviation: "°F"
         },
         {
             unit: "celsius",
-            abbreviation: "C"
+            abbreviation: "°C"
         }
     ],
     states: [
@@ -289,12 +289,17 @@ let currentTemperatureUnit = data.temperature_units[0];
 //////////////////
 // DOM Selectors
 //////////////////
+const temperatures = document.querySelectorAll(".temperature-number");
+const temperatureUnits = document.querySelectorAll(".temperature-unit");
 const formLocation = document.querySelector("#location-form");
 const stateDropDown = document.querySelector("#state");
 const currentDay = document.querySelector("#current-day");
 const currentLocationP = document.querySelector("#location-information");
 const currentTemp = document.querySelector("#current-temp");
+const currentTempUnit = document.querySelector("#current-temp-unit");
+const btnToggleTemperatureUnit = document.querySelector("#temperature-toggle");
 const currentDescription = document.querySelector("#current-description");
+const row = document.querySelector(".row");
 
 ////////////////////////
 //Spotify Songs
@@ -416,6 +421,7 @@ formLocation.addEventListener("submit", (e) => {
     handleLocationSubmit(e)
 });
 
+btnToggleTemperatureUnit.addEventListener("click", () => toggleTemperatureUnit());
 
 //////////////////////
 // Callback Functions
@@ -451,7 +457,7 @@ const handleLocationSubmitByCityState = (city, state) => {
             updateLocationFromCityState(locationData, city, state);
         })
         .catch(`Could not fetch data for ${city}, ${state}`);
-        
+
 }
 
 const updateLocationFromZipCode = (locationData) => {
@@ -482,12 +488,12 @@ const getWeatherData = (location) => {
     let latitude = location.latitude;
     let longitude = location.longitude;
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,precipitation&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset&current_weather=true&temperature_unit=${currentTemperatureUnit.unit}&windspeed_unit=mph&precipitation_unit=inch&timeformat=unixtime&timezone=America%2FNew_York`)
-    .then(resp => resp.json())
-    .then(weatherData => {
-        console.log(weatherData);
-        renderCurrentWeather(weatherData);
-    })
-    .catch(`Could not fetch weather data for ${location.city}, ${location.state_abbreviation} ${location.zip}`);
+        .then(resp => resp.json())
+        .then(weatherData => {
+            console.log(weatherData);
+            renderCurrentWeather(weatherData);
+        })
+        .catch(`Could not fetch weather data for ${location.city}, ${location.state_abbreviation} ${location.zip}`);
 }
 
 const getDescriptionFromWeatherCode = (weatherData) => {
@@ -495,10 +501,19 @@ const getDescriptionFromWeatherCode = (weatherData) => {
     return data.weather_code[code];
 }
 
-const getWeekday = (weatherData) => {
-    let numWeekday = new Date(weatherData.current_weather.time * 1000).getDay();
-    let date = new Date(weatherData.current_weather.time * 1000);
-    return `${data.weekday[numWeekday]}, ${data.month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+const getWeekday = (timestamp) => {
+    let numWeekday = new Date(timestamp * 1000).getDay();
+    return data.weekday[numWeekday];
+}
+
+const getDate = (timestamp) => {
+    let date = new Date(timestamp * 1000);
+    return `${getWeekday(timestamp)}, ${data.month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+}
+
+const toggleTemperatureUnit = () => {
+    currentTemperatureUnit = data.temperature_units[(data.temperature_units.indexOf(currentTemperatureUnit) + 1) % 2];
+    getWeatherData(currentLocation);
 }
 
 
@@ -517,12 +532,17 @@ const renderStates = () => {
 const renderLocation = () => {
     console.log(currentLocation);
     currentLocationP.textContent = `${currentLocation.city}, ${currentLocation.state_abbreviation}`;
+    console.log(currentLocationP);
 }
 
 const renderCurrentWeather = (weatherData) => {
-    currentDay.textContent = getWeekday(weatherData);
-    currentTemp.textContent = `${weatherData.current_weather.temperature}${String.fromCodePoint(176)}${currentTemperatureUnit.abbreviation}`;
+    currentDay.textContent = getDate(weatherData.current_weather.time);
+    currentTemp.textContent = `${weatherData.current_weather.temperature}`
+    currentTempUnit.textContent = `${weatherData.hourly_units.temperature_2m}`;
     currentDescription.textContent = getDescriptionFromWeatherCode(weatherData);
+
+    renderDailyWeather(weatherData);
+
 
     //////////////////
     //Spotify data///
@@ -542,6 +562,40 @@ const renderCurrentWeather = (weatherData) => {
     const target = document.getElementById('spotifyTarget');
     target.innerHTML = embededPlayer;
     console.log(embededPlayer)
+}
+
+const renderDailyWeather = (weatherData) => {
+
+    row.innerHTML = "";
+
+    weatherData.daily.time.forEach(day => {
+
+        let indexOfArr = weatherData.daily.time.indexOf(day);
+
+        if (indexOfArr > 0) {
+
+            let div = document.createElement("div");
+            div.className = "col-2 weekday";
+
+            let strongWeekday = document.createElement("strong");
+            strongWeekday.textContent = getWeekday(day);
+
+            let hr = document.createElement("hr");
+
+            let icon = document.createElement("i");
+            icon.innerHTML = WEATHER_MAPPINGS[weatherData.daily.weathercode[indexOfArr]].icon;
+            console.log(weatherData.daily.weathercode[indexOfArr]);
+
+            let temperatureHighLow = document.createElement("p");
+            let high = `${weatherData.daily.apparent_temperature_max[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+            let low = `${weatherData.daily.apparent_temperature_min[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+            temperatureHighLow.textContent = `${high} / ${low}`;
+
+            div.append(strongWeekday, hr, icon, temperatureHighLow);
+            row.appendChild(div);
+
+        }
+    })
 }
 
 renderStates();
