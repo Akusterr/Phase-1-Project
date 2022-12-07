@@ -532,6 +532,7 @@ const renderStates = () => {
 const renderLocation = () => {
     console.log(currentLocation);
     currentLocationP.textContent = `${currentLocation.city}, ${currentLocation.state_abbreviation}`;
+    console.log(currentLocationP);
 }
 
 const renderCurrentWeather = (weatherData) => {
@@ -581,16 +582,16 @@ const renderDailyWeather = (weatherData) => {
 
             let hr = document.createElement("hr");
 
-            let sunIcon = document.createElement("i");
-            sunIcon.className = "fa-solid fa-sun";
+            let icon = document.createElement("i");
+            icon.innerHTML = WEATHER_MAPPINGS[weatherData.daily.weathercode[indexOfArr]].icon;
+            console.log(weatherData.daily.weathercode[indexOfArr]);
 
             let temperatureHighLow = document.createElement("p");
             let high = `${weatherData.daily.apparent_temperature_max[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
             let low = `${weatherData.daily.apparent_temperature_min[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
             temperatureHighLow.textContent = `${high} / ${low}`;
 
-            div.append(strongWeekday, hr, sunIcon, temperatureHighLow);
-            console.log(div);
+            div.append(strongWeekday, hr, icon, temperatureHighLow);
             row.appendChild(div);
 
         }
