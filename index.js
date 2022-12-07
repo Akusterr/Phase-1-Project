@@ -308,7 +308,7 @@ const row = document.querySelector(".row");
 const WEATHER_MAPPINGS = {
     "0": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     "1": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "2":`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+    "2": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     "3": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     "45": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/28xVpYZV65WjduLWVtamfK?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     "48": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0Zg4tjgfqw9qzq7lXX2sUM?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
@@ -378,7 +378,7 @@ const handleLocationSubmitByCityState = (city, state) => {
             updateLocationFromCityState(locationData, city, state);
         })
         .catch(`Could not fetch data for ${city}, ${state}`);
-        
+
 }
 
 const updateLocationFromZipCode = (locationData) => {
@@ -409,12 +409,12 @@ const getWeatherData = (location) => {
     let latitude = location.latitude;
     let longitude = location.longitude;
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,precipitation&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset&current_weather=true&temperature_unit=${currentTemperatureUnit.unit}&windspeed_unit=mph&precipitation_unit=inch&timeformat=unixtime&timezone=America%2FNew_York`)
-    .then(resp => resp.json())
-    .then(weatherData => {
-        console.log(weatherData);
-        renderCurrentWeather(weatherData);
-    })
-    .catch(`Could not fetch weather data for ${location.city}, ${location.state_abbreviation} ${location.zip}`);
+        .then(resp => resp.json())
+        .then(weatherData => {
+            console.log(weatherData);
+            renderCurrentWeather(weatherData);
+        })
+        .catch(`Could not fetch weather data for ${location.city}, ${location.state_abbreviation} ${location.zip}`);
 }
 
 const getDescriptionFromWeatherCode = (weatherData) => {
@@ -422,14 +422,14 @@ const getDescriptionFromWeatherCode = (weatherData) => {
     return data.weather_code[code];
 }
 
-const getWeekday = (weatherData) => {
-    let numWeekday = new Date(weatherData.current_weather.time * 1000).getDay();
+const getWeekday = (timestamp) => {
+    let numWeekday = new Date(timestamp * 1000).getDay();
     return data.weekday[numWeekday];
 }
 
-const getDate = (weatherData) => {
-    let date = new Date(weatherData.current_weather.time * 1000);
-    return `${getWeekday(weatherData)}, ${data.month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+const getDate = (timestamp) => {
+    let date = new Date(timestamp * 1000);
+    return `${getWeekday(timestamp)}, ${data.month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
 const toggleTemperatureUnit = () => {
@@ -456,10 +456,13 @@ const renderLocation = () => {
 }
 
 const renderCurrentWeather = (weatherData) => {
-    currentDay.textContent = getDate(weatherData);
+    currentDay.textContent = getDate(weatherData.current_weather.time);
     currentTemp.textContent = `${weatherData.current_weather.temperature}`
     currentTempUnit.textContent = `${weatherData.hourly_units.temperature_2m}`;
     currentDescription.textContent = getDescriptionFromWeatherCode(weatherData);
+
+    renderDailyWeather(weatherData);
+
 
     //////////////////
     //Spotify data///
@@ -471,13 +474,36 @@ const renderCurrentWeather = (weatherData) => {
 }
 
 const renderDailyWeather = (weatherData) => {
-    weatherData.daily.time.forEach(day => {
-        let div = document.createElement("div");
-        div.className = "col-2";
-        div.className = "weekday";
 
-        let pWeekday = document.createElement("p");
-        //pWeekday.textContent = 
+    row.innerHTML = "";
+
+    weatherData.daily.time.forEach(day => {
+
+        let indexOfArr = weatherData.daily.time.indexOf(day);
+
+        if (indexOfArr > 0) {
+
+            let div = document.createElement("div");
+            div.className = "col-2 weekday";
+
+            let strongWeekday = document.createElement("strong");
+            strongWeekday.textContent = getWeekday(day);
+
+            let hr = document.createElement("hr");
+
+            let sunIcon = document.createElement("i");
+            sunIcon.className = "fa-solid fa-sun";
+
+            let temperatureHighLow = document.createElement("p");
+            let high = `${weatherData.daily.apparent_temperature_max[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+            let low = `${weatherData.daily.apparent_temperature_min[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+            temperatureHighLow.textContent = `${high} / ${low}`;
+
+            div.append(strongWeekday, hr, sunIcon, temperatureHighLow);
+            console.log(div);
+            row.appendChild(div);
+
+        }
     })
 }
 
