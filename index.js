@@ -35,11 +35,11 @@ const data = {
     temperature_units: [
         {
             unit: "fahrenheit",
-            abbreviation: "F"
+            abbreviation: "°F"
         },
         {
             unit: "celsius",
-            abbreviation: "C"
+            abbreviation: "°C"
         }
     ],
     states: [
@@ -289,12 +289,17 @@ let currentTemperatureUnit = data.temperature_units[0];
 //////////////////
 // DOM Selectors
 //////////////////
+const temperatures = document.querySelectorAll(".temperature-number");
+const temperatureUnits = document.querySelectorAll(".temperature-unit");
 const formLocation = document.querySelector("#location-form");
 const stateDropDown = document.querySelector("#state");
 const currentDay = document.querySelector("#current-day");
 const currentLocationP = document.querySelector("#location-information");
 const currentTemp = document.querySelector("#current-temp");
+const currentTempUnit = document.querySelector("#current-temp-unit");
+const btnToggleTemperatureUnit = document.querySelector("#temperature-toggle");
 const currentDescription = document.querySelector("#current-description");
+const row = document.querySelector(".row");
 
 
 ///////////////////
@@ -305,6 +310,7 @@ formLocation.addEventListener("submit", (e) => {
     handleLocationSubmit(e)
 });
 
+btnToggleTemperatureUnit.addEventListener("click", () => toggleTemperatureUnit());
 
 //////////////////////
 // Callback Functions
@@ -386,8 +392,17 @@ const getDescriptionFromWeatherCode = (weatherData) => {
 
 const getWeekday = (weatherData) => {
     let numWeekday = new Date(weatherData.current_weather.time * 1000).getDay();
+    return data.weekday[numWeekday];
+}
+
+const getDate = (weatherData) => {
     let date = new Date(weatherData.current_weather.time * 1000);
-    return `${data.weekday[numWeekday]}, ${data.month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+    return `${getWeekday(weatherData)}, ${data.month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+}
+
+const toggleTemperatureUnit = () => {
+    currentTemperatureUnit = data.temperature_units[(data.temperature_units.indexOf(currentTemperatureUnit) + 1) % 2];
+    getWeatherData(currentLocation);
 }
 
 
@@ -409,9 +424,21 @@ const renderLocation = () => {
 }
 
 const renderCurrentWeather = (weatherData) => {
-    currentDay.textContent = getWeekday(weatherData);
-    currentTemp.textContent = `${weatherData.current_weather.temperature}${String.fromCodePoint(176)}${currentTemperatureUnit.abbreviation}`;
+    currentDay.textContent = getDate(weatherData);
+    currentTemp.textContent = `${weatherData.current_weather.temperature}`
+    currentTempUnit.textContent = `${weatherData.hourly_units.temperature_2m}`;
     currentDescription.textContent = getDescriptionFromWeatherCode(weatherData);
+}
+
+const renderDailyWeather = (weatherData) => {
+    weatherData.daily.time.forEach(day => {
+        let div = document.createElement("div");
+        div.className = "col-2";
+        div.className = "weekday";
+
+        let pWeekday = document.createElement("p");
+        //pWeekday.textContent = 
+    })
 }
 
 renderStates();

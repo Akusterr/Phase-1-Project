@@ -15,12 +15,14 @@
             <div class="col-3 weekdayz">
                 <form id="location-form">
                 <label for="city">City: </label>
-                <input id="city" name="city" type="text" placeholder="Enter a city" />
+                <input id="city" name="city" type="text" placeholder="Enter city" />
                 <label for="state">State: </label>
                 <select id="state" name="state">
+                    <option value="" selected disabled>Select state</option>
                 </select>
+                 | 
                 <label for="zip-code">Zip Code: </label>
-                <input id="zip-code" name="zip-code" type="text" />
+                <input id="zip-code" name="zip-code" type="text" placeholder="Enter zip" />
                 <input id="location-submit" type="submit" />
                 </form>
             </div>
@@ -32,7 +34,11 @@
                 <p class="day"><strong><span id="current-day"></span></strong></p>
                 <br/>
                 <p id="location-information"></p>
-                <span id="current-temp"></span>
+                <p class="current-temperature">
+                <span class="temperature-number" id="current-temp"></span>
+                <span class="temperature-unit" id="current-temp-unit"></span>
+                <button id="temperature-toggle">&#176;F / &#176;C</button>
+            </p>
 
             </div>  
 
