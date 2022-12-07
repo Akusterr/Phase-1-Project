@@ -297,36 +297,115 @@ const currentTemp = document.querySelector("#current-temp");
 const currentDescription = document.querySelector("#current-description");
 
 ////////////////////////
-//Spotify Song Selectors
+//Spotify Songs
 ///////////////////////
 
 const WEATHER_MAPPINGS = {
-    "0": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "1": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "2":`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "3": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "45": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/28xVpYZV65WjduLWVtamfK?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "48": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0Zg4tjgfqw9qzq7lXX2sUM?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "51": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26AnwFHmManlVCg0toINJc?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "53": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2qvToeBdYliw6n0nEsKJQa?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "55": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "56": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "57": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "61": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3i25w2HOWoafnTIiWJCL71?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "63": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3i25w2HOWoafnTIiWJCL71?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "65": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26AnwFHmManlVCg0toINJc?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "66": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "67": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "71": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3OhwaetItNaTXxn0mr9SkN?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "73": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "75": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "77": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "80": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/47FmTHqPWGWEfbgDpLjvCt?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "81": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/47FmTHqPWGWEfbgDpLjvCt?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "82": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/47FmTHqPWGWEfbgDpLjvCt?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "85": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "86": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-    "95": `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
+    "0":{
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: '<i class="fa-solid fa-sun"></i>',
+    },
+    "1": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: '<i class="fa-solid fa-sun"></i>'
+    },    
+    "2": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: '<i class="fa-solid fa-cloud-sun"></i>'
+    },
+    "3": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: '<i class="fa-solid fa-cloud"></i>'
+    },
+    "45": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/28xVpYZV65WjduLWVtamfK?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-water"></i>`
+    }  ,  
+    "48": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0Zg4tjgfqw9qzq7lXX2sUM?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-smog"></i>`
+    },
+    "51": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26AnwFHmManlVCg0toINJc?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`
+    },
+
+    "53": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2qvToeBdYliw6n0nEsKJQa?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`
+    },    
+    "55": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`
+    },
+    "56": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-meatball"></i>`
+    },
+    "57": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-meatball"></i>`
+    },
+    "61": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`
+    },
+    "63": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3i25w2HOWoafnTIiWJCL71?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`
+    },
+    "65": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26AnwFHmManlVCg0toINJc?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`
+    },
+    "66": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`
+    },
+    "67": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`
+    },
+    "71": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3OhwaetItNaTXxn0mr9SkN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`
+    },
+    "73": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`
+    },
+    "75": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`
+    },
+    "77": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`
+    },
+    "80": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`
+    },
+    "81": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`
+    },
+    "82": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`
+    },
+    "85": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`
+    },
+    "86": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`
+    },
+    "95": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-bolt"></i>`
+    }
 }
 
 ///////////////////
@@ -448,7 +527,18 @@ const renderCurrentWeather = (weatherData) => {
     //////////////////
     //Spotify data///
     ////////////////
-    const embededPlayer = WEATHER_MAPPINGS[weatherData.current_weather.weathercode];;
+    let {embededPlayer, icon} = WEATHER_MAPPINGS[weatherData.current_weather.weathercode];
+    console.log({embededPlayer, icon, weatherData})
+
+    const iconTarget = document.getElementById('currentWeatherIcon');
+    iconTarget.innerHTML = icon;
+
+    // TODO Take me out when you update the weather mappings :-)
+    if(!embededPlayer){
+        embededPlayer =  WEATHER_MAPPINGS[weatherData.current_weather.weathercode]
+    }
+    // ^^
+
     const target = document.getElementById('spotifyTarget');
     target.innerHTML = embededPlayer;
     console.log(embededPlayer)
