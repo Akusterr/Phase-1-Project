@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css"/>
+    <link rel="stylesheet" href="./styles.css" />
     <script src="https://kit.fontawesome.com/5e20d6eaf4.js" crossorigin="anonymous"></script>
     <title>Weather Forcast Serenade </title>
 </head>
@@ -12,95 +13,59 @@
 <body>
 
     <div class="main-wrapper">
-            <div class="col-3 weekdayz">
-                <form id="location-form">
+        <div class="col-3 weekdayz">
+            <form id="location-form">
                 <label for="city">City: </label>
                 <input id="city" name="city" type="text" placeholder="Enter city" />
                 <label for="state">State: </label>
                 <select id="state" name="state">
                     <option value="" selected disabled>Select state</option>
                 </select>
-                 | 
+                |
                 <label for="zip-code">Zip Code: </label>
                 <input id="zip-code" name="zip-code" type="text" placeholder="Enter zip" />
                 <input id="location-submit" type="submit" />
-                </form>
-            </div>
+            </form>
+        </div>
 
-            <div class="col-3 weekdayz" id="current-forcast">
-                <br />
-                <span id="currentWeatherIcon"></span>
-                <br/>
-                <p class="day"><strong><span id="current-day"></span></strong></p>
-                <br/>
-                <p id="location-information"></p>
-                <p class="current-temperature">
+        <div class="col-3 weekdayz" id="current-forcast">
+            <br />
+            <span id="currentWeatherIcon"></span>
+            <br />
+            <p class="day"><strong><span id="current-day"></span></strong></p>
+            <br />
+            <p id="location-information"></p>
+            <p class="current-temperature">
                 <span class="temperature-number" id="current-temp"></span>
                 <span class="temperature-unit" id="current-temp-unit"></span>
                 <button id="temperature-toggle">&#176;F / &#176;C</button>
             </p>
-            
-                <span id="currentTemp"></span>
-                <p class="day"><strong><span id="current-day"></span></strong></p>
-                <span id="current-temp"></span>
-            
+            <p id="today-high-low"></p>
 
-            </div>  
+            <span id="currentTemp"></span>
+            <p class="day"><strong><span id="current-day"></span></strong></p>
+            <span id="current-temp"></span>
 
-            <div class="col-3 weekdayz">
-                <p><span id="current-description"></span><p>
-            </div>
 
-            <div class="col-3 weekdayz">
-                <span id="spotifyTarget"></span>
-            </div>
-            
+        </div>
+
+        <div class="col-3 weekdayz">
+            <p><span id="current-description"></span>
+            <p>
+        </div>
+
+        <div class="col-3 weekdayz">
+            <span id="spotifyTarget"></span>
+        </div>
+
         <div class="row">
-            <!--
-            <div class="col-2 weekday">
-            <strong>Tuesday</strong>
-            <hr/>
-            <i class="fa-solid fa-sun"></i>
-
-            </div>
-            <div class="col-2 weekday" >
-                <strong>Wednesday</strong>
-                <hr />
-            <i class="fa-solid fa-sun"></i>
-
-            </div>
-            <div class="col-2 weekday">
-                <strong>Thursday</strong>
-                <hr />
-            <i class="fa-solid fa-sun"></i>
-
-            </div>
-            <div class="col-2 weekday">
-                <strong>Friday</strong>
-                <hr />
-            <i class="fa-solid fa-sun"></i>
-
-            </div>
-            <div class="col-2 weekday">
-                <strong>Saturday</strong>
-                <hr />
-            <i class="fa-solid fa-sun"></i>
-        
-            </div>
-            <div class="col-2 weekday">
-                <strong>Sunday</strong>
-                <hr />
-            <i class="fa-solid fa-sun"></i>
-        
-            </div>
-            -->
         </div>
     </div>
 
 
 
 
-    
+
 
 
 
@@ -111,4 +76,5 @@
 
     <script src="index.js"></script>
 </body>
+
 </html>
