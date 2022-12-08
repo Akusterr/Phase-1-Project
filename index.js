@@ -599,6 +599,12 @@ const renderCurrentWeather = (weatherData) => {
 
 
 
+     currentTemp.textContent = `${weatherData.current_weather.temperature}`
+    currentTempUnit.textContent = `${weatherData.hourly_units.temperature_2m}`;
+    currentDescription.textContent = getDescriptionFromWeatherCode(weatherData);
+
+
+
     currentTemp.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
     
     btnToggleTemperatureUnit.textContent = currentTemperatureUnit.abbreviation;
