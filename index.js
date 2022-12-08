@@ -297,10 +297,13 @@ const currentDay = document.querySelector("#current-day");
 const currentLocationP = document.querySelector("#location-information");
 const currentTemp = document.querySelector("#current-temp");
 const currentTempUnit = document.querySelector("#current-temp-unit");
+const btnFahrenheit = document.querySelector("#fahrenheit-button");
+const btnCelsius = document.querySelector("#celsius-button");
 const btnToggleTemperatureUnit = document.querySelector("#temperature-toggle");
 const currentHighLowTemperature = document.querySelector("#today-high-low");
 const currentDescription = document.querySelector("#current-description");
 const row = document.querySelector(".row");
+const body = document.querySelector("body");
 
 ////////////////////////
 //Spotify Songs
@@ -414,6 +417,7 @@ const WEATHER_MAPPINGS = {
     }
 }
 
+
 ///////////////////
 // Event Listeners
 ///////////////////
@@ -422,7 +426,11 @@ formLocation.addEventListener("submit", (e) => {
     handleLocationSubmit(e)
 });
 
-btnToggleTemperatureUnit.addEventListener("click", () => toggleTemperatureUnit());
+btnFahrenheit.addEventListener("click", () => setTemperatureUnit(0));
+btnCelsius.addEventListener("click", () => setTemperatureUnit(1));
+
+//btnToggleTemperatureUnit.addEventListener("click", () => toggleTemperatureUnit());
+
 
 //////////////////////
 // Callback Functions
@@ -449,7 +457,6 @@ const handleLocationSubmitByZipCode = (zipCode) => {
 }
 
 const handleLocationSubmitByCityState = (city, state) => {
-    // https://api.zippopotam.us/us/co/denver
     console.log(`https://api.zippopotam.us/us/${state}/${city}`);
     fetch(`https://api.zippopotam.us/us/${state}/${city}`)
         .then(resp => resp.json())
@@ -512,8 +519,18 @@ const getDate = (timestamp) => {
     return `${getWeekday(timestamp)}, ${data.month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
+const setTemperatureUnit = (unit) => {
+    if (currentTemperatureUnit !== unit) {
+        currentTemperatureUnit = data.temperature_units[unit];
+        getWeatherData(currentLocation);
+    }
+}
+
 const toggleTemperatureUnit = () => {
-    currentTemperatureUnit = data.temperature_units[(data.temperature_units.indexOf(currentTemperatureUnit) + 1) % 2];
+    let indexofArr = data.temperature_units.indexOf(currentTemperatureUnit);
+    
+    currentTemperatureUnit = data.temperature_units[(indexofArr + 1) % 2];
+
     getWeatherData(currentLocation);
 }
 
@@ -538,14 +555,15 @@ const renderLocation = () => {
 
 const renderCurrentWeather = (weatherData) => {
     currentDay.textContent = getDate(weatherData.current_weather.time);
-    currentTemp.textContent = `${weatherData.current_weather.temperature}`
-    currentTempUnit.textContent = `${weatherData.hourly_units.temperature_2m}`;
+    currentTemp.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
+    
+    btnToggleTemperatureUnit.textContent = currentTemperatureUnit.abbreviation;
     currentDescription.textContent = getDescriptionFromWeatherCode(weatherData);
-
-    let high = `${weatherData.daily.apparent_temperature_max[0]} ${weatherData.hourly_units.temperature_2m}`;
-    let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
+    let high = `${weatherData.daily.apparent_temperature_max[0]}${String.fromCodePoint(176)}`;
+    let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
     currentHighLowTemperature.textContent = `${high} / ${low}`;
 
+    
     renderDailyWeather(weatherData);
 
 
@@ -592,8 +610,8 @@ const renderDailyWeather = (weatherData) => {
             console.log(weatherData.daily.weathercode[indexOfArr]);
 
             let temperatureHighLow = document.createElement("p");
-            let high = `${weatherData.daily.apparent_temperature_max[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
-            let low = `${weatherData.daily.apparent_temperature_min[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+            let high = `${weatherData.daily.apparent_temperature_max[indexOfArr]}${String.fromCodePoint(176)}`;
+            let low = `${weatherData.daily.apparent_temperature_min[indexOfArr]}${String.fromCodePoint(176)}`;
             temperatureHighLow.textContent = `${high} / ${low}`;
 
             div.append(strongWeekday, hr, icon, temperatureHighLow);
