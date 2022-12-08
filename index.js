@@ -299,7 +299,7 @@ const currentTemp = document.querySelector("#current-temp");
 const currentTempUnit = document.querySelector("#current-temp-unit");
 const btnFahrenheit = document.querySelector("#fahrenheit-button");
 const btnCelsius = document.querySelector("#celsius-button");
-const btnToggleTemperatureUnit = document.querySelector("#temperature-toggle");
+// const btnToggleTemperatureUnit = document.querySelector("#temperature-toggle");
 const currentHighLowTemperature = document.querySelector("#today-high-low");
 const currentDescription = document.querySelector("#current-description");
 const row = document.querySelector(".row");
@@ -444,7 +444,7 @@ const WEATHER_MAPPINGS = {
     "95": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'thunder'
     }
 }
 
@@ -607,9 +607,9 @@ const renderCurrentWeather = (weatherData) => {
 
     currentTemp.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
     
-    btnToggleTemperatureUnit.textContent = currentTemperatureUnit.abbreviation;
-    let high = `${weatherData.daily.apparent_temperature_max[0]}${String.fromCodePoint(176)}`;
-    let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
+    btnFahrenheit.textContent = currentTemperatureUnit.abbreviation;
+    let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
+    // let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
     let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
 
 
@@ -672,8 +672,9 @@ const renderDailyWeather = (weatherData) => {
             console.log(weatherData.daily.weathercode[indexOfArr]);
 
             let temperatureHighLow = document.createElement("p");
-            let high = `${weatherData.daily.apparent_temperature_max[indexOfArr]}${String.fromCodePoint(176)}`;
-            let low = `${weatherData.daily.apparent_temperature_min[indexOfArr]}${String.fromCodePoint(176)}`;
+            let high = `${weatherData.daily.apparent_temperature_max[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+            let low = `${weatherData.daily.apparent_temperature_min[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+          
             temperatureHighLow.textContent = `${high} / ${low}`;
 
             div.append(strongWeekday, hr, icon, temperatureHighLow);
