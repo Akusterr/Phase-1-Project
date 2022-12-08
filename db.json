@@ -2,12 +2,12 @@
   "location": [
     {
       "id": 1,
-      "city": "New York City",
-      "stateAbbreviation": "NY",
-      "stateName": "New York",
-      "zipCode": "10004",
-      "latitude": "40.6964",
-      "longitude": "-74.0253"
+      "city": "Seattle",
+      "stateAbbreviation": "WA",
+      "stateName": "",
+      "zipCode": "98060",
+      "latitude": "47.4323",
+      "longitude": "-121.8034"
     }
   ],
   "temperature": [

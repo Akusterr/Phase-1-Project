@@ -447,37 +447,29 @@ const targetPlayer = document.getElementById('spotifyTarget');
 ///////////////////
 formLocation.addEventListener("submit", (e) => {
     e.preventDefault();
-    handleLocationSubmit(e)
+    handleLocationSubmit(e);
+    e.target.clear();
 });
 
 btnFahrenheit.addEventListener("click", () => setTemperatureUnit(0));
 btnCelsius.addEventListener("click", () => setTemperatureUnit(1));
 
-formLocation.addEventListener('mouseover', (e) => mouseOver(e));
+btnSubmit.addEventListener('mouseover', (e) => mouseOver(e));
 const mouseOver = (e) => {
     btnSubmit.style.color = "#5C15C8";
 }
 
-formLocation.addEventListener('mouseOut', (e) => mouseOut(e));
+btnSubmit.addEventListener('mouseout', (e) => mouseOut(e));
 const mouseOut = (e) => {
     btnSubmit.style.color = "black";
 }
 
 
-formLocation.addEventListener('mouseover', (e) => mouseOver(e))
-const mouseOver = (e) => {
-inputSubmitButton.style.color = "#5C15CB"
-}
-
-formLocation.addEventListener('mouseout', (e) => mouseOut(e))
-const mouseOut = (e) => {
-inputSubmitButton.style.color = "black"
-}
-
 //////////////////////
 // Callback Functions
 //////////////////////
 const handleLocationSubmit = (e) => {
+    console.log(e.target);
     const zipCode = e.target["zip-code"].value;
     if (zipCode) {
         handleLocationSubmitByZipCode(zipCode);
@@ -486,7 +478,6 @@ const handleLocationSubmit = (e) => {
         const city = e.target.city.value;
         handleLocationSubmitByCityState(city, state);
     }
-    e.target.clear();
 }
 
 const handleLocationSubmitByZipCode = (zipCode) => {
@@ -496,7 +487,7 @@ const handleLocationSubmitByZipCode = (zipCode) => {
             console.log(locationData);
             updateLocationFromZipCode(locationData);
         })
-        .catch(alert(`${zipCode} not found.`));
+        //.catch(alert(`${zipCode} not found.`));
 }
 
 const handleLocationSubmitByCityState = (city, state) => {
@@ -507,7 +498,7 @@ const handleLocationSubmitByCityState = (city, state) => {
             console.log(locationData);
             updateLocationFromCityState(locationData, city, state);
         })
-        .catch(alert(`${city}, ${state} not found.`));
+        //.catch(alert(`${city}, ${state} not found.`));
 }
 
 const updateLocationFromZipCode = (locationData) => {
@@ -647,7 +638,6 @@ const renderDailyWeather = (weatherData) => {
 
             let icon = document.createElement("i");
             icon.innerHTML = weatherMappings[weatherData.daily.weathercode[i]].icon;
-            console.log(weatherData.daily.weathercode[i]);
 
             let temperatureHigh = document.createElement("p");
             let temperatureLow = document.createElement("p");
