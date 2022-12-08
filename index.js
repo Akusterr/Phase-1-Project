@@ -2,36 +2,36 @@
 // This will go into a seperate data.js file
 ///////////////////////////////////////////////////////////////////////////////
 const data = {
-    weather_code: {
-        "0": "clear sky",
-        "1": "mainly clear",
-        "2": "partly cloudy",
-        "3": "overcast",
-        "45": "fog",
-        "48": "depositing rime fog",
-        "51": "light drizzle",
-        "53": "moderate drizzle",
-        "55": "dense drizzle",
-        "56": "light freezing drizzle",
-        "57": "dense freezing drizzle",
-        "61": "slight rain",
-        "63": "moderate rain",
-        "65": "heavy rain",
-        "66": "light freezing rain",
-        "67": "heavy freezing rain",
-        "71": "slight snowfall",
-        "73": "moderate snowfall",
-        "75": "heavy snowfall",
-        "77": "snow grains",
-        "80": "slight rain showers",
-        "81": "moderate rain showers",
-        "82": "heavy rain showers",
-        "85": "slight snow showers",
-        "86": "heavy snow showers",
-        "95": "thunderstorm",
-        "96": "thunderstorm with slight hail",
-        "99": "thunderstorm with heavy hail",
-    },
+    // weather_code: {
+    //     "0": "clear sky",
+    //     "1": "mainly clear",
+    //     "2": "partly cloudy",
+    //     "3": "overcast",
+    //     "45": "fog",
+    //     "48": "depositing rime fog",
+    //     "51": "light drizzle",
+    //     "53": "moderate drizzle",
+    //     "55": "dense drizzle",
+    //     "56": "light freezing drizzle",
+    //     "57": "dense freezing drizzle",
+    //     "61": "slight rain",
+    //     "63": "moderate rain",
+    //     "65": "heavy rain",
+    //     "66": "light freezing rain",
+    //     "67": "heavy freezing rain",
+    //     "71": "slight snowfall",
+    //     "73": "moderate snowfall",
+    //     "75": "heavy snowfall",
+    //     "77": "snow grains",
+    //     "80": "slight rain showers",
+    //     "81": "moderate rain showers",
+    //     "82": "heavy rain showers",
+    //     "85": "slight snow showers",
+    //     "86": "heavy snow showers",
+    //     "95": "thunderstorm",
+    //     "96": "thunderstorm with slight hail",
+    //     "99": "thunderstorm with heavy hail",
+    // },
     temperature_units: [
         {
             unit: "fahrenheit",
@@ -309,63 +309,84 @@ const body = document.querySelector("body");
 //Spotify Songs
 ///////////////////////
 
+
+
+    
+
+
+
+
+
+
+
 const WEATHER_MAPPINGS = {
-    "0":{
+    "0": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: '<i class="fa-solid fa-sun"></i>',
-        pictureClassName: 'sunnyPicture'
+        pictureClassName: 'sunnyPicture',
+        description: "clear sky"
     },
     "1": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: '<i class="fa-solid fa-sun"></i>',
-        pictureClassName: 'sunnyPicture'
+        pictureClassName: 'sunnyPicture',
+        description: "mainly clear"
     },    
     "2": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: '<i class="fa-solid fa-cloud-sun"></i>',
-        pictureClassName: 'cloudSun'
+        pictureClassName: 'cloudSun',
+        description: "partly cloudy"
     },
     "3": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: '<i class="fa-solid fa-cloud"></i>',
-        pictureClassName: 'cloudSun'
+        pictureClassName: 'cloudSun',
+        description: "overcast"
         
     },
     "45": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/28xVpYZV65WjduLWVtamfK?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-water"></i>`,
-        pictureClassName: 'cloudSun'
+        pictureClassName: 'cloudSun',
+        description: "fog"
     },  
     "48": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0Zg4tjgfqw9qzq7lXX2sUM?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-smog"></i>`,
-        pictureClassName: 'cloudSun'
+        pictureClassName: 'cloudSun',
+        description: "depositing rime fog"
     },
     "51": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26AnwFHmManlVCg0toINJc?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "light drizzle"
     },
 
     "53": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2qvToeBdYliw6n0nEsKJQa?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "moderate drizzle"
     },    
     "55": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "dense drizzle"
     },
     "56": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-meatball"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "light freezing drizzle"
     },
     "57": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-meatball"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "dense freezing drizzle"
     },
     "61": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
@@ -375,75 +396,100 @@ const WEATHER_MAPPINGS = {
     "63": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3i25w2HOWoafnTIiWJCL71?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "slight rain"
     },
     "65": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26AnwFHmManlVCg0toINJc?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "moderate rain"
     },
     "66": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "heavy rain"
     },
     "67": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "heavy freezing rain"
     },
     "71": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3OhwaetItNaTXxn0mr9SkN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "slight snowfall"
     },
     "73": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "moderate snowfall"
     },
     "75": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "heavy snowfall"
     },
     "77": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "snow grains"
     },
     "80": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "slight rain showers"
     },
     "81": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "moderate rain showers"
     },
     "82": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "heavy rain showers"
     },
     "85": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "slight snow showers"
     },
     "86": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "heavy snow showers"
     },
     "95": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "thunderstorm"
+    },
+    "96": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
+        pictureClassName: 'lakeAndTrees',
+        description: "thunderstorm with slight hail"
+    },
+    "99": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
+        pictureClassName: 'lakeAndTrees',
+        description: "thunderstorm with heavy hail"
     }
 }
-
 
 ///////////////////
 // Event Listeners
@@ -533,7 +579,7 @@ const getWeatherData = (location) => {
 
 const getDescriptionFromWeatherCode = (weatherData) => {
     let code = weatherData.current_weather.weathercode;
-    return data.weather_code[code];
+    return WEATHER_MAPPINGS[code].description;
 }
 
 const getWeekday = (timestamp) => {
@@ -589,7 +635,7 @@ const renderCurrentWeather = (weatherData) => {
     let low = `${weatherData.daily.apparent_temperature_min[0]}${weatherData.hourly_units.temperature_2m}`;
     currentHighLowTemperature.textContent = `${high} / ${low}`;
 
-    currentDescription.textContent = data.weather_code[weatherData.current_weather.weathercode];
+    currentDescription.textContent = WEATHER_MAPPINGS[weatherData.current_weather.weathercode].description;
 
     renderDailyWeather(weatherData);
 
