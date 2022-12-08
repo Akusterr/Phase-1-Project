@@ -1,219 +1,7 @@
 ////////////////
 // Data Objects
 ////////////////
-const data = {
-    temperature_units: [
-        {
-            unit: "fahrenheit",
-            abbreviation: "°F"
-        },
-        {
-            unit: "celsius",
-            abbreviation: "°C"
-        }
-    ],
-    states: [
-        {
-            "abbreviation": "AL",
-            "state": "Alabama"
-        },
-        {
-            "abbreviation": "AK",
-            "state": "Alaska"
-        },
-        {
-            "abbreviation": "AZ",
-            "state": "Arizona"
-        },
-        {
-            "abbreviation": "AR",
-            "state": "Arkansas"
-        },
-        {
-            "abbreviation": "CA",
-            "state": "California"
-        },
-        {
-            "abbreviation": "CO",
-            "state": "Colorado"
-        },
-        {
-            "abbreviation": "CT",
-            "state": "Connecticut"
-        },
-        {
-            "abbreviation": "DE",
-            "state": "Delaware"
-        },
-        {
-            "abbreviation": "FL",
-            "state": "Florida"
-        },
-        {
-            "abbreviation": "GA",
-            "state": "Georgia"
-        },
-        {
-            "abbreviation": "HI",
-            "state": "Hawaii"
-        },
-        {
-            "abbreviation": "ID",
-            "state": "Idaho"
-        },
-        {
-            "abbreviation": "IL",
-            "state": "Illinois"
-        },
-        {
-            "abbreviation": "IN",
-            "state": "Indiana"
-        },
-        {
-            "abbreviation": "IA",
-            "state": "Iowa"
-        },
-        {
-            "abbreviation": "KS",
-            "state": "Kansas"
-        },
-        {
-            "abbreviation": "KY",
-            "state": "Kentucky"
-        },
-        {
-            "abbreviation": "LA",
-            "state": "Louisiana"
-        },
-        {
-            "abbreviation": "ME",
-            "state": "Maine"
-        },
-        {
-            "abbreviation": "MD",
-            "state": "Maryland"
-        },
-        {
-            "abbreviation": "MA",
-            "state": "Massachusetts"
-        },
-        {
-            "abbreviation": "MI",
-            "state": "Michigan"
-        },
-        {
-            "abbreviation": "MN",
-            "state": "Minnesota"
-        },
-        {
-            "abbreviation": "MS",
-            "state": "Mississippi"
-        },
-        {
-            "abbreviation": "MO",
-            "state": "Missouri"
-        },
-        {
-            "abbreviation": "MT",
-            "state": "Montana"
-        },
-        {
-            "abbreviation": "NE",
-            "state": "Nebraska"
-        },
-        {
-            "abbreviation": "NV",
-            "state": "Nevada"
-        },
-        {
-            "abbreviation": "NH",
-            "state": "New Hampshire"
-        },
-        {
-            "abbreviation": "NJ",
-            "state": "New Jersey"
-        },
-        {
-            "abbreviation": "NM",
-            "state": "New Mexico"
-        },
-        {
-            "abbreviation": "NY",
-            "state": "New York"
-        },
-        {
-            "abbreviation": "NC",
-            "state": "North Carolina"
-        },
-        {
-            "abbreviation": "ND",
-            "state": "North Dakota"
-        },
-        {
-            "abbreviation": "OH",
-            "state": "Ohio"
-        },
-        {
-            "abbreviation": "OK",
-            "state": "Oklahoma"
-        },
-        {
-            "abbreviation": "OR",
-            "state": "Oregon"
-        },
-        {
-            "abbreviation": "PA",
-            "state": "Pennsylvania"
-        },
-        {
-            "abbreviation": "RI",
-            "state": "Rhode Island"
-        },
-        {
-            "abbreviation": "SC",
-            "state": "South Carolina"
-        },
-        {
-            "abbreviation": "SD",
-            "state": "South Dakota"
-        },
-        {
-            "abbreviation": "TN",
-            "state": "Tennessee"
-        },
-        {
-            "abbreviation": "TX",
-            "state": "Texas"
-        },
-        {
-            "abbreviation": "UT",
-            "state": "Utah"
-        },
-        {
-            "abbreviation": "VT",
-            "state": "Vermont"
-        },
-        {
-            "abbreviation": "VA",
-            "state": "Virginia"
-        },
-        {
-            "abbreviation": "WA",
-            "state": "Washington"
-        },
-        {
-            "abbreviation": "WV",
-            "state": "West Virginia"
-        },
-        {
-            "abbreviation": "WI",
-            "state": "Wisconsin"
-        },
-        {
-            "abbreviation": "WY",
-            "state": "Wyoming"
-        }
-    ],
+const dates = {
     weekday: {
         0: "Sunday",
         1: "Monday",
@@ -238,6 +26,220 @@ const data = {
         11: "December"
     }
 }
+
+const temperature_units =  [
+    {
+        unit: "fahrenheit",
+        abbreviation: "°F"
+    },
+    {
+        unit: "celsius",
+        abbreviation: "°C"
+    }
+]
+
+const states = [
+    {
+        "abbreviation": "AL",
+        "state": "Alabama"
+    },
+    {
+        "abbreviation": "AK",
+        "state": "Alaska"
+    },
+    {
+        "abbreviation": "AZ",
+        "state": "Arizona"
+    },
+    {
+        "abbreviation": "AR",
+        "state": "Arkansas"
+    },
+    {
+        "abbreviation": "CA",
+        "state": "California"
+    },
+    {
+        "abbreviation": "CO",
+        "state": "Colorado"
+    },
+    {
+        "abbreviation": "CT",
+        "state": "Connecticut"
+    },
+    {
+        "abbreviation": "DE",
+        "state": "Delaware"
+    },
+    {
+        "abbreviation": "FL",
+        "state": "Florida"
+    },
+    {
+        "abbreviation": "GA",
+        "state": "Georgia"
+    },
+    {
+        "abbreviation": "HI",
+        "state": "Hawaii"
+    },
+    {
+        "abbreviation": "ID",
+        "state": "Idaho"
+    },
+    {
+        "abbreviation": "IL",
+        "state": "Illinois"
+    },
+    {
+        "abbreviation": "IN",
+        "state": "Indiana"
+    },
+    {
+        "abbreviation": "IA",
+        "state": "Iowa"
+    },
+    {
+        "abbreviation": "KS",
+        "state": "Kansas"
+    },
+    {
+        "abbreviation": "KY",
+        "state": "Kentucky"
+    },
+    {
+        "abbreviation": "LA",
+        "state": "Louisiana"
+    },
+    {
+        "abbreviation": "ME",
+        "state": "Maine"
+    },
+    {
+        "abbreviation": "MD",
+        "state": "Maryland"
+    },
+    {
+        "abbreviation": "MA",
+        "state": "Massachusetts"
+    },
+    {
+        "abbreviation": "MI",
+        "state": "Michigan"
+    },
+    {
+        "abbreviation": "MN",
+        "state": "Minnesota"
+    },
+    {
+        "abbreviation": "MS",
+        "state": "Mississippi"
+    },
+    {
+        "abbreviation": "MO",
+        "state": "Missouri"
+    },
+    {
+        "abbreviation": "MT",
+        "state": "Montana"
+    },
+    {
+        "abbreviation": "NE",
+        "state": "Nebraska"
+    },
+    {
+        "abbreviation": "NV",
+        "state": "Nevada"
+    },
+    {
+        "abbreviation": "NH",
+        "state": "New Hampshire"
+    },
+    {
+        "abbreviation": "NJ",
+        "state": "New Jersey"
+    },
+    {
+        "abbreviation": "NM",
+        "state": "New Mexico"
+    },
+    {
+        "abbreviation": "NY",
+        "state": "New York"
+    },
+    {
+        "abbreviation": "NC",
+        "state": "North Carolina"
+    },
+    {
+        "abbreviation": "ND",
+        "state": "North Dakota"
+    },
+    {
+        "abbreviation": "OH",
+        "state": "Ohio"
+    },
+    {
+        "abbreviation": "OK",
+        "state": "Oklahoma"
+    },
+    {
+        "abbreviation": "OR",
+        "state": "Oregon"
+    },
+    {
+        "abbreviation": "PA",
+        "state": "Pennsylvania"
+    },
+    {
+        "abbreviation": "RI",
+        "state": "Rhode Island"
+    },
+    {
+        "abbreviation": "SC",
+        "state": "South Carolina"
+    },
+    {
+        "abbreviation": "SD",
+        "state": "South Dakota"
+    },
+    {
+        "abbreviation": "TN",
+        "state": "Tennessee"
+    },
+    {
+        "abbreviation": "TX",
+        "state": "Texas"
+    },
+    {
+        "abbreviation": "UT",
+        "state": "Utah"
+    },
+    {
+        "abbreviation": "VT",
+        "state": "Vermont"
+    },
+    {
+        "abbreviation": "VA",
+        "state": "Virginia"
+    },
+    {
+        "abbreviation": "WA",
+        "state": "Washington"
+    },
+    {
+        "abbreviation": "WV",
+        "state": "West Virginia"
+    },
+    {
+        "abbreviation": "WI",
+        "state": "Wisconsin"
+    },
+    {
+        "abbreviation": "WY",
+        "state": "Wyoming"
+    }
+];
 
 const weatherMappings = {
     "0": {
@@ -415,38 +417,29 @@ const weatherMappings = {
 ////////////////////
 // Global Variables
 ////////////////////
-let currentLocation = {
-    city: "New York City",
-    state: "New York",
-    state_abbreviation: "NY",
-    zip: "10004",
-    latitude: "40.6964",
-    longitude: "-74.0253"
-};
+let currentLocation;
 
 // Temperature unit will default to Fahrenheit
-let currentTemperatureUnit = data.temperature_units[0];
+let currentTemperatureUnit = temperature_units[0];
 
 
 /////////////////
 // DOM Selectors
 /////////////////
 const body = document.querySelector("body");
-//const temperatures = document.querySelectorAll(".temperature-number");
-//const temperatureUnits = document.querySelectorAll(".temperature-unit");
 const formLocation = document.querySelector("#location-form");
 const selectState = document.querySelector("#state");
 const spanCurrentDay = document.querySelector("#current-day");
 const pCurrentLocation = document.querySelector("#location-information");
 const pCurrentTemperature = document.querySelector("#current-temperature");
-//const spanCurrentTempUnit = document.querySelector("#current-temp-unit");
 const btnFahrenheit = document.querySelector("#fahrenheit-button");
 const btnCelsius = document.querySelector("#celsius-button");
-//const btnToggleTemperatureUnit = document.querySelector("#temperature-toggle");
 const pTodayHighLowTemperature = document.querySelector("#today-high-low");
 const pCurrentDescription = document.querySelector("#weather-description");
 const divRow = document.querySelector(".row");
-const inputSubmitButton = document.querySelector("#location-submit");
+const btnSubmit = document.querySelector("#location-submit");
+const targetIcon = document.getElementById('currentWeatherIcon');
+const targetPlayer = document.getElementById('spotifyTarget');
 
 
 ///////////////////
@@ -462,12 +455,12 @@ btnCelsius.addEventListener("click", () => setTemperatureUnit(1));
 
 formLocation.addEventListener('mouseover', (e) => mouseOver(e));
 const mouseOver = (e) => {
-    inputSubmitButton.style.color = "#5C15C8";
+    btnSubmit.style.color = "#5C15C8";
 }
 
 formLocation.addEventListener('mouseOut', (e) => mouseOut(e));
 const mouseOut = (e) => {
-    inputSubmitButton.style.color = "black";
+    btnSubmit.style.color = "black";
 }
 
 
@@ -483,6 +476,7 @@ const handleLocationSubmit = (e) => {
         const city = e.target.city.value;
         handleLocationSubmitByCityState(city, state);
     }
+    e.target.clear();
 }
 
 const handleLocationSubmitByZipCode = (zipCode) => {
@@ -492,7 +486,7 @@ const handleLocationSubmitByZipCode = (zipCode) => {
             console.log(locationData);
             updateLocationFromZipCode(locationData);
         })
-        .catch(`Could not fetch data for zip code ${zipCode}`);
+        .catch(alert(`${zipCode} not found.`));
 }
 
 const handleLocationSubmitByCityState = (city, state) => {
@@ -503,31 +497,53 @@ const handleLocationSubmitByCityState = (city, state) => {
             console.log(locationData);
             updateLocationFromCityState(locationData, city, state);
         })
-        .catch(`Could not fetch data for ${city}, ${state}`);
+        .catch(alert(`${city}, ${state} not found.`));
 }
 
 const updateLocationFromZipCode = (locationData) => {
-    currentLocation.city = locationData.places[0]["place name"];
-    currentLocation.state = locationData.places[0].state;
-    currentLocation.state_abbreviation = locationData.places[0]["state abbreviation"];
-    currentLocation.zip = locationData["post code"];
-    currentLocation.latitude = locationData.places[0].latitude;
-    currentLocation.longitude = locationData.places[0].longitude;
+    let newLocation = {
+        city: locationData.places[0]["place name"],
+        stateAbbreviation: locationData.places[0]["state abbreviation"],
+        stateName: locationData.places[0].state,
+        zipCode: locationData["post code"],
+        latitude: locationData.places[0].latitude,
+        longitude: locationData.places[0].longitude
+    }
+    currentLocation = newLocation;
 
+    patchLocation(currentLocation);
     renderLocation();
     getWeatherData(currentLocation);
 }
 
 const updateLocationFromCityState = (locationData, city, state) => {
-    currentLocation.city = city;
-    currentLocation.state = ""
-    currentLocation.state_abbreviation = state;
-    currentLocation.zip = locationData.places[0]["post code"];
-    currentLocation.latitude = locationData.places[0].latitude;
-    currentLocation.longitude = locationData.places[0].longitude;
+    let newLocation = {
+        city: city,
+        stateAbbreviation: state,
+        stateName: "",
+        zipCode: locationData.places[0]["post code"],
+        latitude: locationData.places[0].latitude,
+        longitude: locationData.places[0].longitude
+    }
+    currentLocation = newLocation;
 
+    patchLocation(currentLocation);
     renderLocation();
     getWeatherData(currentLocation);
+}
+
+const patchLocation = (location) => {
+    fetch("http://localhost:3000/location/1", {
+        method: 'PATCH',
+        headers:{
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+        },
+        body: JSON.stringify(location)
+    })
+    .then(resp => resp.json())
+    .then(location => console.log(location))
+    .catch("Location not updated.");
 }
 
 const getWeatherData = (location) => {
@@ -542,32 +558,21 @@ const getWeatherData = (location) => {
         .catch(`Could not fetch weather data for ${location.city}, ${location.state_abbreviation} ${location.zip}`);
 }
 
-const getDescriptionFromWeatherCode = (weatherData) => {
-    let code = weatherData.current_weather.weathercode;
-    return weatherMappings[code].description;
-}
-
 const getWeekday = (timestamp) => {
     let numWeekday = new Date(timestamp * 1000).getDay();
-    return data.weekday[numWeekday];
+    return dates.weekday[numWeekday];
 }
 
 const getDate = (timestamp) => {
     let date = new Date(timestamp * 1000);
-    return `${getWeekday(timestamp)}, ${data.month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+    return `${getWeekday(timestamp)}, ${dates.month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
 const setTemperatureUnit = (unit) => {
     if (currentTemperatureUnit !== unit) {
-        currentTemperatureUnit = data.temperature_units[unit];
+        currentTemperatureUnit = temperature_units[unit];
         getWeatherData(currentLocation);
     }
-}
-
-const toggleTemperatureUnit = () => {
-    let indexofArr = data.temperature_units.indexOf(currentTemperatureUnit);
-    currentTemperatureUnit = data.temperature_units[(indexofArr + 1) % 2];
-    getWeatherData(currentLocation);
 }
 
 
@@ -575,7 +580,7 @@ const toggleTemperatureUnit = () => {
 // Render Functions
 ///////////////////
 const renderStates = () => {
-    data.states.forEach(state => {
+    states.forEach(state => {
         let option = document.createElement("option");
         option.value = state.abbreviation;
         option.textContent = state.state;
@@ -584,56 +589,43 @@ const renderStates = () => {
 }
 
 const renderLocation = () => {
-    console.log(currentLocation);
-    pCurrentLocation.textContent = `${currentLocation.city}, ${currentLocation.state_abbreviation}`;
-    console.log(pCurrentLocation);
+    pCurrentLocation.textContent = `${currentLocation.city}, ${currentLocation.stateAbbreviation}`;
 }
 
 const renderCurrentWeather = (weatherData) => {
+    const weatherMapping = weatherMappings[weatherData.current_weather.weathercode];
+
+    // Box display
     spanCurrentDay.textContent = getDate(weatherData.current_weather.time);
     pCurrentTemperature.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
     
     let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
     let low = `${weatherData.daily.apparent_temperature_min[0]}${weatherData.hourly_units.temperature_2m}`;
-    
     pTodayHighLowTemperature.textContent = `${high} / ${low}`;
+
+    targetIcon.innerHTML = weatherMapping.icon;
 
     pCurrentDescription.textContent = weatherMappings[weatherData.current_weather.weathercode].description;
 
-    renderDailyWeather(weatherData);
-
-
-    ////////////////////
-    // Background Images
-    ////////////////////
-    console.log(weatherData)
-    const body = document.getElementById('godbody');
-    const weatherMapping = weatherMappings[weatherData.current_weather.weathercode]
+    // Background image
     const className= weatherMapping.pictureClassName
     body.className = weatherMappings[weatherData.current_weather.weathercode].pictureClassName;
-    console.log({weatherMapping, className})
+    
+    // Spotify
+    targetPlayer.innerHTML = weatherMapping.embededPlayer;
 
-
-    //////////////////
-    //Spotify data///
-    ////////////////
-    let {embededPlayer, icon} = weatherMappings[weatherData.current_weather.weathercode];
-    console.log({embededPlayer, icon, weatherData})
-
-    const iconTarget = document.getElementById('currentWeatherIcon');
-    iconTarget.innerHTML = icon;
-
-    const target = document.getElementById('spotifyTarget');
-    target.innerHTML = embededPlayer;
-    console.log(embededPlayer)
+    // Daily Weather
+    renderDailyWeather(weatherData);
 }
 
 const renderDailyWeather = (weatherData) => {
     divRow.innerHTML = "";
 
     weatherData.daily.time.forEach(day => {
-        let indexOfArr = weatherData.daily.time.indexOf(day);
-        if (indexOfArr > 0) {
+        let i = weatherData.daily.time.indexOf(day);
+
+        // Bottom row does not display today's weather
+        if (i > 0) {
 
             let div = document.createElement("div");
             div.className = "col-2 weekday";
@@ -644,13 +636,13 @@ const renderDailyWeather = (weatherData) => {
             let hr = document.createElement("hr");
 
             let icon = document.createElement("i");
-            icon.innerHTML = weatherMappings[weatherData.daily.weathercode[indexOfArr]].icon;
-            console.log(weatherData.daily.weathercode[indexOfArr]);
+            icon.innerHTML = weatherMappings[weatherData.daily.weathercode[i]].icon;
+            console.log(weatherData.daily.weathercode[i]);
 
             let temperatureHigh = document.createElement("p");
             let temperatureLow = document.createElement("p");
-            temperatureHigh.textContent = `${weatherData.daily.apparent_temperature_max[indexOfArr]}${weatherData.hourly_units.temperature_2m} /`;
-            temperatureLow.textContent = `${weatherData.daily.apparent_temperature_min[indexOfArr]}${weatherData.hourly_units.temperature_2m}`;
+            temperatureHigh.textContent = `${weatherData.daily.apparent_temperature_max[i]}${weatherData.hourly_units.temperature_2m} /`;
+            temperatureLow.textContent = `${weatherData.daily.apparent_temperature_min[i]}${weatherData.hourly_units.temperature_2m}`;
 
             div.append(strongWeekday, hr, icon, temperatureHigh, temperatureLow);
             divRow.appendChild(div);
@@ -659,19 +651,17 @@ const renderDailyWeather = (weatherData) => {
 }
 
 
-//////////
+////////
 // Init
-//////////
+////////
 
-// fetch("http://localhost:3000/location/1")
-//     .then(resp => resp.json())
-//     .then(location => getWeatherData(location))
-//     .catch(console.log(location));
-
-// const init = () => {
-    
-// }
+fetch("http://localhost:3000/location/1")
+    .then(resp => resp.json())
+    .then(location => {
+        currentLocation = location;
+        renderLocation();
+        getWeatherData(currentLocation);
+    })
+    .catch(console.log(location));
 
 renderStates();
-renderLocation();
-getWeatherData(currentLocation);
