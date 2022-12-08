@@ -10,10 +10,10 @@
 
 
 }
-.city-wrapper {
+/* .city-wrapper {
     font-size: 20px;
     color: black;
-}
+} */
 
 
 .weekdayz {
@@ -53,6 +53,26 @@ strong {
 
 #zip-code {
     width: 55px;
+}
+
+#city {
+    border-radius: 10px;
+}
+
+#state {
+    border-radius: 10px;
+}
+
+#zip-code {
+    border-radius: 10px;
+}
+
+#temperature-toggle {
+    border-radius: 10px;
+}
+
+#location-submit {
+    border-radius: 10px;
 }
 
 .cloudSun {

@@ -464,6 +464,16 @@ const mouseOut = (e) => {
 }
 
 
+formLocation.addEventListener('mouseover', (e) => mouseOver(e))
+const mouseOver = (e) => {
+inputSubmitButton.style.color = "#5C15CB"
+}
+
+formLocation.addEventListener('mouseout', (e) => mouseOut(e))
+const mouseOut = (e) => {
+inputSubmitButton.style.color = "black"
+}
+
 //////////////////////
 // Callback Functions
 //////////////////////
