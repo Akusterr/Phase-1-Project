@@ -303,7 +303,11 @@ const btnToggleTemperatureUnit = document.querySelector("#temperature-toggle");
 const currentHighLowTemperature = document.querySelector("#today-high-low");
 const currentDescription = document.querySelector("#current-description");
 const row = document.querySelector(".row");
+
+const inputSubmitButton = document.querySelector("#location-submit")
+
 const body = document.querySelector("body");
+
 
 ////////////////////////
 //Spotify Songs
@@ -459,6 +463,16 @@ btnCelsius.addEventListener("click", () => setTemperatureUnit(1));
 //btnToggleTemperatureUnit.addEventListener("click", () => toggleTemperatureUnit());
 
 
+formLocation.addEventListener('mouseover', (e) => mouseOver(e))
+const mouseOver = (e) => {
+inputSubmitButton.style.color = "#5C15CB"
+}
+
+formLocation.addEventListener('mouseout', (e) => mouseOut(e))
+const mouseOut = (e) => {
+inputSubmitButton.style.color = "black"
+}
+
 //////////////////////
 // Callback Functions
 //////////////////////
@@ -582,6 +596,9 @@ const renderLocation = () => {
 
 const renderCurrentWeather = (weatherData) => {
     currentDay.textContent = getDate(weatherData.current_weather.time);
+
+
+
     currentTemp.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
     
     btnToggleTemperatureUnit.textContent = currentTemperatureUnit.abbreviation;
@@ -589,7 +606,6 @@ const renderCurrentWeather = (weatherData) => {
     let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
     let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
 
-    
 
     renderDailyWeather(weatherData);
 
