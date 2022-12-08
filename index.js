@@ -584,12 +584,12 @@ const renderCurrentWeather = (weatherData) => {
     currentDay.textContent = getDate(weatherData.current_weather.time);
     currentTemp.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
     
-    btnToggleTemperatureUnit.textContent = currentTemperatureUnit.abbreviation;
-    let high = `${weatherData.daily.apparent_temperature_max[0]}${String.fromCodePoint(176)}`;
-    let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
-    let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
+    //btnToggleTemperatureUnit.textContent = currentTemperatureUnit.abbreviation;
+    let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
+    let low = `${weatherData.daily.apparent_temperature_min[0]}${weatherData.hourly_units.temperature_2m}`;
+    currentHighLowTemperature.textContent = `${high} / ${low}`;
 
-    
+    currentDescription.textContent = data.weather_code[weatherData.current_weather.weathercode];
 
     renderDailyWeather(weatherData);
 
@@ -649,12 +649,13 @@ const renderDailyWeather = (weatherData) => {
             icon.innerHTML = WEATHER_MAPPINGS[weatherData.daily.weathercode[indexOfArr]].icon;
             console.log(weatherData.daily.weathercode[indexOfArr]);
 
-            let temperatureHighLow = document.createElement("p");
-            let high = `${weatherData.daily.apparent_temperature_max[indexOfArr]}${String.fromCodePoint(176)}`;
-            let low = `${weatherData.daily.apparent_temperature_min[indexOfArr]}${String.fromCodePoint(176)}`;
-            temperatureHighLow.textContent = `${high} / ${low}`;
+            let temperatureHigh = document.createElement("p");
+            let temperatureLow = document.createElement("p");
+            temperatureHigh.textContent = `${weatherData.daily.apparent_temperature_max[indexOfArr]}${weatherData.hourly_units.temperature_2m} /`;
+            temperatureLow.textContent = `${weatherData.daily.apparent_temperature_min[indexOfArr]}${weatherData.hourly_units.temperature_2m}`;
+            //temperatureHighLow.textContent = `${high} / ${low}`;
 
-            div.append(strongWeekday, hr, icon, temperatureHighLow);
+            div.append(strongWeekday, hr, icon, temperatureHigh, temperatureLow);
             row.appendChild(div);
 
         }
