@@ -40,13 +40,12 @@
 }
 
 body {
-    background-image: url(cloud-sun.jpeg);
+    
     background-size: 50%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
- 
 
 strong {
     font-size: 25px;
@@ -56,14 +55,24 @@ strong {
     width: 55px;
 }
 
-/* #temperature-toggle {
-    color: black;
-    background-color: #AAA3BA;
-    border: 1px solid #2e1a35;
-} */
-/* #city {
-    color: black;
-    background-color: #AAA3BA;
-    border: 1px solid #2e1a35;
+.cloudSun {
+    background-image: url(cloud-sun.jpeg);
+}
 
-} */
+.lakeAndTrees {
+    background-image: url(trees&lake.avif);
+}
+
+.sunnyPicture {
+
+    background-image: url(sun.jpeg);
+}
+
+.sunflower {
+    background-image: url(sunflower.avif);
+}
+
+.rainy {
+    background-image: url(rain.jpeg)
+}
+

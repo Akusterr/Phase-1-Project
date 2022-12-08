@@ -313,107 +313,134 @@ const WEATHER_MAPPINGS = {
     "0":{
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: '<i class="fa-solid fa-sun"></i>',
+        pictureClassName: 'sunnyPicture'
     },
     "1": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: '<i class="fa-solid fa-sun"></i>'
+        icon: '<i class="fa-solid fa-sun"></i>',
+        pictureClassName: 'sunnyPicture'
     },    
     "2": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: '<i class="fa-solid fa-cloud-sun"></i>'
+        icon: '<i class="fa-solid fa-cloud-sun"></i>',
+        pictureClassName: 'cloudSun'
     },
     "3": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: '<i class="fa-solid fa-cloud"></i>'
+        icon: '<i class="fa-solid fa-cloud"></i>',
+        pictureClassName: 'cloudSun'
+        
     },
     "45": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/28xVpYZV65WjduLWVtamfK?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-water"></i>`
-    }  ,  
+        icon: `<i class="fa-solid fa-water"></i>`,
+        pictureClassName: 'cloudSun'
+    },  
     "48": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0Zg4tjgfqw9qzq7lXX2sUM?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-smog"></i>`
+        icon: `<i class="fa-solid fa-smog"></i>`,
+        pictureClassName: 'cloudSun'
     },
     "51": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26AnwFHmManlVCg0toINJc?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-cloud-rain"></i>`
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`,
+        pictureClassName: 'rainy'
     },
 
     "53": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2qvToeBdYliw6n0nEsKJQa?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-cloud-rain"></i>`
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`,
+        pictureClassName: 'rainy'
     },    
     "55": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`
+        icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
+        pictureClassName: 'rainy'
     },
     "56": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-cloud-meatball"></i>`
+        icon: `<i class="fa-solid fa-cloud-meatball"></i>`,
+        pictureClassName: 'rainy'
     },
     "57": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-cloud-meatball"></i>`
+        icon: `<i class="fa-solid fa-cloud-meatball"></i>`,
+        pictureClassName: 'rainy'
     },
     "61": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-cloud-rain"></i>`
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`,
+        pictureClassName: 'rainy'
     },
     "63": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3i25w2HOWoafnTIiWJCL71?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-cloud-rain"></i>`
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`,
+        pictureClassName: 'rainy'
     },
     "65": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26AnwFHmManlVCg0toINJc?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`
+        icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
+        pictureClassName: 'rainy'
     },
     "66": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-regular fa-snowflake"></i>`
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees'
     },
     "67": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-regular fa-snowflake"></i>`
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees'
     },
     "71": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3OhwaetItNaTXxn0mr9SkN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-regular fa-snowflake"></i>`
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees'
     },
     "73": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-regular fa-snowflake"></i>`
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees'
     },
     "75": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-regular fa-snowflake"></i>`
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees'
     },
     "77": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-regular fa-snowflake"></i>`
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees'
     },
     "80": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-cloud-rain"></i>`
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`,
+        pictureClassName: 'rainy'
     },
     "81": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-cloud-rain"></i>`
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`,
+        pictureClassName: 'rainy'
     },
     "82": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`
+        icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
+        pictureClassName: 'rainy'
     },
     "85": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-regular fa-snowflake"></i>`
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees'
     },
     "86": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-regular fa-snowflake"></i>`
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees'
     },
     "95": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-        icon: `<i class="fa-solid fa-cloud-bolt"></i>`
+        icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
+        pictureClassName: 'lakeAndTrees'
     }
 }
 
@@ -558,13 +585,26 @@ const renderCurrentWeather = (weatherData) => {
     currentTemp.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
     
     btnToggleTemperatureUnit.textContent = currentTemperatureUnit.abbreviation;
-    currentDescription.textContent = getDescriptionFromWeatherCode(weatherData);
     let high = `${weatherData.daily.apparent_temperature_max[0]}${String.fromCodePoint(176)}`;
     let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
-    currentHighLowTemperature.textContent = `${high} / ${low}`;
+    let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
 
     
+
     renderDailyWeather(weatherData);
+
+    //////////////////
+    //background images
+    //////////////////
+
+
+     console.log(weatherData)
+    const body = document.getElementById('godbody');
+    const weatherMapping = WEATHER_MAPPINGS[weatherData.current_weather.weathercode]
+    const className= weatherMapping.pictureClassName
+    body.className = WEATHER_MAPPINGS[weatherData.current_weather.weathercode].pictureClassName;
+    console.log({weatherMapping, className})
+
 
 
     //////////////////
