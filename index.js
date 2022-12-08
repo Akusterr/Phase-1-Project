@@ -298,6 +298,7 @@ const currentLocationP = document.querySelector("#location-information");
 const currentTemp = document.querySelector("#current-temp");
 const currentTempUnit = document.querySelector("#current-temp-unit");
 const btnToggleTemperatureUnit = document.querySelector("#temperature-toggle");
+const currentHighLowTemperature = document.querySelector("#today-high-low");
 const currentDescription = document.querySelector("#current-description");
 const row = document.querySelector(".row");
 
@@ -568,7 +569,13 @@ const renderCurrentWeather = (weatherData) => {
     currentTempUnit.textContent = `${weatherData.hourly_units.temperature_2m}`;
     currentDescription.textContent = getDescriptionFromWeatherCode(weatherData);
 
+<<<<<<< Design-Branch
    
+=======
+    let high = `${weatherData.daily.apparent_temperature_max[0]} ${weatherData.hourly_units.temperature_2m}`;
+    let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
+    currentHighLowTemperature.textContent = `${high} / ${low}`;
+>>>>>>> main
 
     renderDailyWeather(weatherData);
 
