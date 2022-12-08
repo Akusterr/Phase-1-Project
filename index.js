@@ -1,37 +1,7 @@
-///////////////////////////////////////////////////////////////////////////////
-// This will go into a seperate data.js file
-///////////////////////////////////////////////////////////////////////////////
+////////////////
+// Data Objects
+////////////////
 const data = {
-    // weather_code: {
-    //     "0": "clear sky",
-    //     "1": "mainly clear",
-    //     "2": "partly cloudy",
-    //     "3": "overcast",
-    //     "45": "fog",
-    //     "48": "depositing rime fog",
-    //     "51": "light drizzle",
-    //     "53": "moderate drizzle",
-    //     "55": "dense drizzle",
-    //     "56": "light freezing drizzle",
-    //     "57": "dense freezing drizzle",
-    //     "61": "slight rain",
-    //     "63": "moderate rain",
-    //     "65": "heavy rain",
-    //     "66": "light freezing rain",
-    //     "67": "heavy freezing rain",
-    //     "71": "slight snowfall",
-    //     "73": "moderate snowfall",
-    //     "75": "heavy snowfall",
-    //     "77": "snow grains",
-    //     "80": "slight rain showers",
-    //     "81": "moderate rain showers",
-    //     "82": "heavy rain showers",
-    //     "85": "slight snow showers",
-    //     "86": "heavy snow showers",
-    //     "95": "thunderstorm",
-    //     "96": "thunderstorm with slight hail",
-    //     "99": "thunderstorm with heavy hail",
-    // },
     temperature_units: [
         {
             unit: "fahrenheit",
@@ -269,57 +239,7 @@ const data = {
     }
 }
 
-
-////////////////////
-// Global Variables
-////////////////////
-let currentLocation = {
-    city: "New York City",
-    state: "New York",
-    state_abbreviation: "NY",
-    zip: "10004",
-    latitude: "40.6964",
-    longitude: "-74.0253"
-};
-
-// Temperature unit will default to Fahrenheit
-let currentTemperatureUnit = data.temperature_units[0];
-
-
-//////////////////
-// DOM Selectors
-//////////////////
-const temperatures = document.querySelectorAll(".temperature-number");
-const temperatureUnits = document.querySelectorAll(".temperature-unit");
-const formLocation = document.querySelector("#location-form");
-const stateDropDown = document.querySelector("#state");
-const currentDay = document.querySelector("#current-day");
-const currentLocationP = document.querySelector("#location-information");
-const currentTemp = document.querySelector("#current-temp");
-const currentTempUnit = document.querySelector("#current-temp-unit");
-const btnFahrenheit = document.querySelector("#fahrenheit-button");
-const btnCelsius = document.querySelector("#celsius-button");
-const btnToggleTemperatureUnit = document.querySelector("#temperature-toggle");
-const currentHighLowTemperature = document.querySelector("#today-high-low");
-const currentDescription = document.querySelector("#current-description");
-const row = document.querySelector(".row");
-const body = document.querySelector("body");
-
-////////////////////////
-//Spotify Songs
-///////////////////////
-
-
-
-    
-
-
-
-
-
-
-
-const WEATHER_MAPPINGS = {
+const weatherMappings = {
     "0": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: '<i class="fa-solid fa-sun"></i>',
@@ -491,6 +411,44 @@ const WEATHER_MAPPINGS = {
     }
 }
 
+
+////////////////////
+// Global Variables
+////////////////////
+let currentLocation = {
+    city: "New York City",
+    state: "New York",
+    state_abbreviation: "NY",
+    zip: "10004",
+    latitude: "40.6964",
+    longitude: "-74.0253"
+};
+
+// Temperature unit will default to Fahrenheit
+let currentTemperatureUnit = data.temperature_units[0];
+
+
+/////////////////
+// DOM Selectors
+/////////////////
+const body = document.querySelector("body");
+//const temperatures = document.querySelectorAll(".temperature-number");
+//const temperatureUnits = document.querySelectorAll(".temperature-unit");
+const formLocation = document.querySelector("#location-form");
+const selectState = document.querySelector("#state");
+const spanCurrentDay = document.querySelector("#current-day");
+const pCurrentLocation = document.querySelector("#location-information");
+const pCurrentTemperature = document.querySelector("#current-temperature");
+//const spanCurrentTempUnit = document.querySelector("#current-temp-unit");
+const btnFahrenheit = document.querySelector("#fahrenheit-button");
+const btnCelsius = document.querySelector("#celsius-button");
+//const btnToggleTemperatureUnit = document.querySelector("#temperature-toggle");
+const pTodayHighLowTemperature = document.querySelector("#today-high-low");
+const pCurrentDescription = document.querySelector("#weather-description");
+const divRow = document.querySelector(".row");
+const inputSubmitButton = document.querySelector("#location-submit");
+
+
 ///////////////////
 // Event Listeners
 ///////////////////
@@ -502,7 +460,15 @@ formLocation.addEventListener("submit", (e) => {
 btnFahrenheit.addEventListener("click", () => setTemperatureUnit(0));
 btnCelsius.addEventListener("click", () => setTemperatureUnit(1));
 
-//btnToggleTemperatureUnit.addEventListener("click", () => toggleTemperatureUnit());
+formLocation.addEventListener('mouseover', (e) => mouseOver(e));
+const mouseOver = (e) => {
+    inputSubmitButton.style.color = "#5C15C8";
+}
+
+formLocation.addEventListener('mouseOut', (e) => mouseOut(e));
+const mouseOut = (e) => {
+    inputSubmitButton.style.color = "black";
+}
 
 
 //////////////////////
@@ -538,7 +504,6 @@ const handleLocationSubmitByCityState = (city, state) => {
             updateLocationFromCityState(locationData, city, state);
         })
         .catch(`Could not fetch data for ${city}, ${state}`);
-
 }
 
 const updateLocationFromZipCode = (locationData) => {
@@ -579,7 +544,7 @@ const getWeatherData = (location) => {
 
 const getDescriptionFromWeatherCode = (weatherData) => {
     let code = weatherData.current_weather.weathercode;
-    return WEATHER_MAPPINGS[code].description;
+    return weatherMappings[code].description;
 }
 
 const getWeekday = (timestamp) => {
@@ -601,72 +566,62 @@ const setTemperatureUnit = (unit) => {
 
 const toggleTemperatureUnit = () => {
     let indexofArr = data.temperature_units.indexOf(currentTemperatureUnit);
-    
     currentTemperatureUnit = data.temperature_units[(indexofArr + 1) % 2];
-
     getWeatherData(currentLocation);
 }
 
 
-/////////////////////
+///////////////////
 // Render Functions
-/////////////////////
+///////////////////
 const renderStates = () => {
     data.states.forEach(state => {
         let option = document.createElement("option");
         option.value = state.abbreviation;
         option.textContent = state.state;
-        stateDropDown.appendChild(option);
+        selectState.appendChild(option);
     })
 }
 
 const renderLocation = () => {
     console.log(currentLocation);
-    currentLocationP.textContent = `${currentLocation.city}, ${currentLocation.state_abbreviation}`;
-    console.log(currentLocationP);
+    pCurrentLocation.textContent = `${currentLocation.city}, ${currentLocation.state_abbreviation}`;
+    console.log(pCurrentLocation);
 }
 
 const renderCurrentWeather = (weatherData) => {
-    currentDay.textContent = getDate(weatherData.current_weather.time);
-    currentTemp.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
+    spanCurrentDay.textContent = getDate(weatherData.current_weather.time);
+    pCurrentTemperature.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
     
-    //btnToggleTemperatureUnit.textContent = currentTemperatureUnit.abbreviation;
     let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
     let low = `${weatherData.daily.apparent_temperature_min[0]}${weatherData.hourly_units.temperature_2m}`;
-    currentHighLowTemperature.textContent = `${high} / ${low}`;
+    
+    pTodayHighLowTemperature.textContent = `${high} / ${low}`;
 
-    currentDescription.textContent = WEATHER_MAPPINGS[weatherData.current_weather.weathercode].description;
+    pCurrentDescription.textContent = weatherMappings[weatherData.current_weather.weathercode].description;
 
     renderDailyWeather(weatherData);
 
-    //////////////////
-    //background images
-    //////////////////
 
-
-     console.log(weatherData)
+    ////////////////////
+    // Background Images
+    ////////////////////
+    console.log(weatherData)
     const body = document.getElementById('godbody');
-    const weatherMapping = WEATHER_MAPPINGS[weatherData.current_weather.weathercode]
+    const weatherMapping = weatherMappings[weatherData.current_weather.weathercode]
     const className= weatherMapping.pictureClassName
-    body.className = WEATHER_MAPPINGS[weatherData.current_weather.weathercode].pictureClassName;
+    body.className = weatherMappings[weatherData.current_weather.weathercode].pictureClassName;
     console.log({weatherMapping, className})
-
 
 
     //////////////////
     //Spotify data///
     ////////////////
-    let {embededPlayer, icon} = WEATHER_MAPPINGS[weatherData.current_weather.weathercode];
+    let {embededPlayer, icon} = weatherMappings[weatherData.current_weather.weathercode];
     console.log({embededPlayer, icon, weatherData})
 
     const iconTarget = document.getElementById('currentWeatherIcon');
     iconTarget.innerHTML = icon;
-
-    // TODO Take me out when you update the weather mappings :-)
-    if(!embededPlayer){
-        embededPlayer =  WEATHER_MAPPINGS[weatherData.current_weather.weathercode]
-    }
-    // ^^
 
     const target = document.getElementById('spotifyTarget');
     target.innerHTML = embededPlayer;
@@ -674,13 +629,10 @@ const renderCurrentWeather = (weatherData) => {
 }
 
 const renderDailyWeather = (weatherData) => {
-
-    row.innerHTML = "";
+    divRow.innerHTML = "";
 
     weatherData.daily.time.forEach(day => {
-
         let indexOfArr = weatherData.daily.time.indexOf(day);
-
         if (indexOfArr > 0) {
 
             let div = document.createElement("div");
@@ -692,21 +644,33 @@ const renderDailyWeather = (weatherData) => {
             let hr = document.createElement("hr");
 
             let icon = document.createElement("i");
-            icon.innerHTML = WEATHER_MAPPINGS[weatherData.daily.weathercode[indexOfArr]].icon;
+            icon.innerHTML = weatherMappings[weatherData.daily.weathercode[indexOfArr]].icon;
             console.log(weatherData.daily.weathercode[indexOfArr]);
 
             let temperatureHigh = document.createElement("p");
             let temperatureLow = document.createElement("p");
             temperatureHigh.textContent = `${weatherData.daily.apparent_temperature_max[indexOfArr]}${weatherData.hourly_units.temperature_2m} /`;
             temperatureLow.textContent = `${weatherData.daily.apparent_temperature_min[indexOfArr]}${weatherData.hourly_units.temperature_2m}`;
-            //temperatureHighLow.textContent = `${high} / ${low}`;
 
             div.append(strongWeekday, hr, icon, temperatureHigh, temperatureLow);
-            row.appendChild(div);
-
+            divRow.appendChild(div);
         }
     })
 }
+
+
+//////////
+// Init
+//////////
+
+// fetch("http://localhost:3000/location/1")
+//     .then(resp => resp.json())
+//     .then(location => getWeatherData(location))
+//     .catch(console.log(location));
+
+// const init = () => {
+    
+// }
 
 renderStates();
 renderLocation();
