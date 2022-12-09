@@ -38,6 +38,54 @@ const temperature_units =  [
     }
 ]
 
+/////////erase below??////
+
+
+
+
+////////////////////
+// Global Variables
+////////////////////
+let currentLocation = {
+    city: "New York City",
+    state: "New York",
+    state_abbreviation: "NY",
+    zip: "10004",
+    latitude: "40.6964",
+    longitude: "-74.0253"
+};
+
+// Temperature unit will default to Fahrenheit
+let currentTemperatureUnit = data.temperature_units[0];
+
+
+//////////////////
+// DOM Selectors
+//////////////////
+const temperatures = document.querySelectorAll(".temperature-number");
+const temperatureUnits = document.querySelectorAll(".temperature-unit");
+const formLocation = document.querySelector("#location-form");
+const stateDropDown = document.querySelector("#state");
+const currentDay = document.querySelector("#current-day");
+const currentLocationP = document.querySelector("#location-information");
+const currentTemp = document.querySelector("#current-temp");
+const currentTempUnit = document.querySelector("#current-temp-unit");
+const btnFahrenheit = document.querySelector("#fahrenheit-button");
+const btnCelsius = document.querySelector("#celsius-button");
+// const btnToggleTemperatureUnit = document.querySelector("#temperature-toggle");
+const currentHighLowTemperature = document.querySelector("#today-high-low");
+const currentDescription = document.querySelector("#current-description");
+const row = document.querySelector(".row");
+
+const inputSubmitButton = document.querySelector("#location-submit")
+
+const body = document.querySelector("body");
+
+
+////////////////////////
+//Spotify Songs
+///////////////////////
+=======
 const states = [
     {
         "abbreviation": "AL",
@@ -240,6 +288,10 @@ const states = [
         "state": "Wyoming"
     }
 ];
+//////erase above?????////
+
+
+
 
 const weatherMappings = {
     "0": {
@@ -396,19 +448,19 @@ const weatherMappings = {
     "95": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
-        pictureClassName: 'lakeAndTrees',
+        pictureClassName: 'thunder'
         description: "thunderstorm"
     },
     "96": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
-        pictureClassName: 'lakeAndTrees',
+        pictureClassName: 'thunder',
         description: "thunderstorm with slight hail"
     },
     "99": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
-        pictureClassName: 'lakeAndTrees',
+        pictureClassName: 'thunder',
         description: "thunderstorm with heavy hail"
     }
 }
@@ -609,6 +661,16 @@ const renderCurrentWeather = (weatherData) => {
     spanCurrentDay.textContent = getDate(weatherData.current_weather.time);
     pCurrentTemperature.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
     
+////erase below??////
+  
+  
+//     btnFahrenheit.textContent = currentTemperatureUnit.abbreviation;
+//     let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
+//     // let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
+//     let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
+//////erase above?/////
+
+  
     let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
     let low = `${weatherData.daily.apparent_temperature_min[0]}${weatherData.hourly_units.temperature_2m}`;
     pTodayHighLowTemperature.textContent = `${high} / ${low}`;
@@ -649,10 +711,23 @@ const renderDailyWeather = (weatherData) => {
             icon.innerHTML = weatherMappings[weatherData.daily.weathercode[i]].icon;
             console.log(weatherData.daily.weathercode[i]);
 
+///////erase below??////
+//             let temperatureHighLow = document.createElement("p");
+//             let high = `${weatherData.daily.apparent_temperature_max[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+//             let low = `${weatherData.daily.apparent_temperature_min[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+          
+//             temperatureHighLow.textContent = `${high} / ${low}`;
+
+//             div.append(strongWeekday, hr, icon, temperatureHighLow);
+//             row.appendChild(div);
+//////erase above?//////
+          
+          
             let temperatureHigh = document.createElement("p");
             let temperatureLow = document.createElement("p");
             temperatureHigh.textContent = `${weatherData.daily.apparent_temperature_max[i]}${weatherData.hourly_units.temperature_2m} /`;
             temperatureLow.textContent = `${weatherData.daily.apparent_temperature_min[i]}${weatherData.hourly_units.temperature_2m}`;
+
 
             div.append(strongWeekday, hr, icon, temperatureHigh, temperatureLow);
             divRow.appendChild(div);
