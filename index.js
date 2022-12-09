@@ -1,249 +1,7 @@
-///////////////////////////////////////////////////////////////////////////////
-// This will go into a seperate data.js file
-///////////////////////////////////////////////////////////////////////////////
-const data = {
-    weather_code: {
-        "0": "clear sky",
-        "1": "mainly clear",
-        "2": "partly cloudy",
-        "3": "overcast",
-        "45": "fog",
-        "48": "depositing rime fog",
-        "51": "light drizzle",
-        "53": "moderate drizzle",
-        "55": "dense drizzle",
-        "56": "light freezing drizzle",
-        "57": "dense freezing drizzle",
-        "61": "slight rain",
-        "63": "moderate rain",
-        "65": "heavy rain",
-        "66": "light freezing rain",
-        "67": "heavy freezing rain",
-        "71": "slight snowfall",
-        "73": "moderate snowfall",
-        "75": "heavy snowfall",
-        "77": "snow grains",
-        "80": "slight rain showers",
-        "81": "moderate rain showers",
-        "82": "heavy rain showers",
-        "85": "slight snow showers",
-        "86": "heavy snow showers",
-        "95": "thunderstorm",
-        "96": "thunderstorm with slight hail",
-        "99": "thunderstorm with heavy hail",
-    },
-    temperature_units: [
-        {
-            unit: "fahrenheit",
-            abbreviation: "°F"
-        },
-        {
-            unit: "celsius",
-            abbreviation: "°C"
-        }
-    ],
-    states: [
-        {
-            "abbreviation": "AL",
-            "state": "Alabama"
-        },
-        {
-            "abbreviation": "AK",
-            "state": "Alaska"
-        },
-        {
-            "abbreviation": "AZ",
-            "state": "Arizona"
-        },
-        {
-            "abbreviation": "AR",
-            "state": "Arkansas"
-        },
-        {
-            "abbreviation": "CA",
-            "state": "California"
-        },
-        {
-            "abbreviation": "CO",
-            "state": "Colorado"
-        },
-        {
-            "abbreviation": "CT",
-            "state": "Connecticut"
-        },
-        {
-            "abbreviation": "DE",
-            "state": "Delaware"
-        },
-        {
-            "abbreviation": "FL",
-            "state": "Florida"
-        },
-        {
-            "abbreviation": "GA",
-            "state": "Georgia"
-        },
-        {
-            "abbreviation": "HI",
-            "state": "Hawaii"
-        },
-        {
-            "abbreviation": "ID",
-            "state": "Idaho"
-        },
-        {
-            "abbreviation": "IL",
-            "state": "Illinois"
-        },
-        {
-            "abbreviation": "IN",
-            "state": "Indiana"
-        },
-        {
-            "abbreviation": "IA",
-            "state": "Iowa"
-        },
-        {
-            "abbreviation": "KS",
-            "state": "Kansas"
-        },
-        {
-            "abbreviation": "KY",
-            "state": "Kentucky"
-        },
-        {
-            "abbreviation": "LA",
-            "state": "Louisiana"
-        },
-        {
-            "abbreviation": "ME",
-            "state": "Maine"
-        },
-        {
-            "abbreviation": "MD",
-            "state": "Maryland"
-        },
-        {
-            "abbreviation": "MA",
-            "state": "Massachusetts"
-        },
-        {
-            "abbreviation": "MI",
-            "state": "Michigan"
-        },
-        {
-            "abbreviation": "MN",
-            "state": "Minnesota"
-        },
-        {
-            "abbreviation": "MS",
-            "state": "Mississippi"
-        },
-        {
-            "abbreviation": "MO",
-            "state": "Missouri"
-        },
-        {
-            "abbreviation": "MT",
-            "state": "Montana"
-        },
-        {
-            "abbreviation": "NE",
-            "state": "Nebraska"
-        },
-        {
-            "abbreviation": "NV",
-            "state": "Nevada"
-        },
-        {
-            "abbreviation": "NH",
-            "state": "New Hampshire"
-        },
-        {
-            "abbreviation": "NJ",
-            "state": "New Jersey"
-        },
-        {
-            "abbreviation": "NM",
-            "state": "New Mexico"
-        },
-        {
-            "abbreviation": "NY",
-            "state": "New York"
-        },
-        {
-            "abbreviation": "NC",
-            "state": "North Carolina"
-        },
-        {
-            "abbreviation": "ND",
-            "state": "North Dakota"
-        },
-        {
-            "abbreviation": "OH",
-            "state": "Ohio"
-        },
-        {
-            "abbreviation": "OK",
-            "state": "Oklahoma"
-        },
-        {
-            "abbreviation": "OR",
-            "state": "Oregon"
-        },
-        {
-            "abbreviation": "PA",
-            "state": "Pennsylvania"
-        },
-        {
-            "abbreviation": "RI",
-            "state": "Rhode Island"
-        },
-        {
-            "abbreviation": "SC",
-            "state": "South Carolina"
-        },
-        {
-            "abbreviation": "SD",
-            "state": "South Dakota"
-        },
-        {
-            "abbreviation": "TN",
-            "state": "Tennessee"
-        },
-        {
-            "abbreviation": "TX",
-            "state": "Texas"
-        },
-        {
-            "abbreviation": "UT",
-            "state": "Utah"
-        },
-        {
-            "abbreviation": "VT",
-            "state": "Vermont"
-        },
-        {
-            "abbreviation": "VA",
-            "state": "Virginia"
-        },
-        {
-            "abbreviation": "WA",
-            "state": "Washington"
-        },
-        {
-            "abbreviation": "WV",
-            "state": "West Virginia"
-        },
-        {
-            "abbreviation": "WI",
-            "state": "Wisconsin"
-        },
-        {
-            "abbreviation": "WY",
-            "state": "Wyoming"
-        }
-    ],
+////////////////
+// Data Objects
+////////////////
+const dates = {
     weekday: {
         0: "Sunday",
         1: "Monday",
@@ -268,6 +26,21 @@ const data = {
         11: "December"
     }
 }
+
+const temperature_units =  [
+    {
+        unit: "fahrenheit",
+        abbreviation: "°F"
+    },
+    {
+        unit: "celsius",
+        abbreviation: "°C"
+    }
+]
+
+/////////erase below??////
+
+
 
 
 ////////////////////
@@ -312,64 +85,282 @@ const body = document.querySelector("body");
 ////////////////////////
 //Spotify Songs
 ///////////////////////
+=======
+const states = [
+    {
+        "abbreviation": "AL",
+        "state": "Alabama"
+    },
+    {
+        "abbreviation": "AK",
+        "state": "Alaska"
+    },
+    {
+        "abbreviation": "AZ",
+        "state": "Arizona"
+    },
+    {
+        "abbreviation": "AR",
+        "state": "Arkansas"
+    },
+    {
+        "abbreviation": "CA",
+        "state": "California"
+    },
+    {
+        "abbreviation": "CO",
+        "state": "Colorado"
+    },
+    {
+        "abbreviation": "CT",
+        "state": "Connecticut"
+    },
+    {
+        "abbreviation": "DE",
+        "state": "Delaware"
+    },
+    {
+        "abbreviation": "FL",
+        "state": "Florida"
+    },
+    {
+        "abbreviation": "GA",
+        "state": "Georgia"
+    },
+    {
+        "abbreviation": "HI",
+        "state": "Hawaii"
+    },
+    {
+        "abbreviation": "ID",
+        "state": "Idaho"
+    },
+    {
+        "abbreviation": "IL",
+        "state": "Illinois"
+    },
+    {
+        "abbreviation": "IN",
+        "state": "Indiana"
+    },
+    {
+        "abbreviation": "IA",
+        "state": "Iowa"
+    },
+    {
+        "abbreviation": "KS",
+        "state": "Kansas"
+    },
+    {
+        "abbreviation": "KY",
+        "state": "Kentucky"
+    },
+    {
+        "abbreviation": "LA",
+        "state": "Louisiana"
+    },
+    {
+        "abbreviation": "ME",
+        "state": "Maine"
+    },
+    {
+        "abbreviation": "MD",
+        "state": "Maryland"
+    },
+    {
+        "abbreviation": "MA",
+        "state": "Massachusetts"
+    },
+    {
+        "abbreviation": "MI",
+        "state": "Michigan"
+    },
+    {
+        "abbreviation": "MN",
+        "state": "Minnesota"
+    },
+    {
+        "abbreviation": "MS",
+        "state": "Mississippi"
+    },
+    {
+        "abbreviation": "MO",
+        "state": "Missouri"
+    },
+    {
+        "abbreviation": "MT",
+        "state": "Montana"
+    },
+    {
+        "abbreviation": "NE",
+        "state": "Nebraska"
+    },
+    {
+        "abbreviation": "NV",
+        "state": "Nevada"
+    },
+    {
+        "abbreviation": "NH",
+        "state": "New Hampshire"
+    },
+    {
+        "abbreviation": "NJ",
+        "state": "New Jersey"
+    },
+    {
+        "abbreviation": "NM",
+        "state": "New Mexico"
+    },
+    {
+        "abbreviation": "NY",
+        "state": "New York"
+    },
+    {
+        "abbreviation": "NC",
+        "state": "North Carolina"
+    },
+    {
+        "abbreviation": "ND",
+        "state": "North Dakota"
+    },
+    {
+        "abbreviation": "OH",
+        "state": "Ohio"
+    },
+    {
+        "abbreviation": "OK",
+        "state": "Oklahoma"
+    },
+    {
+        "abbreviation": "OR",
+        "state": "Oregon"
+    },
+    {
+        "abbreviation": "PA",
+        "state": "Pennsylvania"
+    },
+    {
+        "abbreviation": "RI",
+        "state": "Rhode Island"
+    },
+    {
+        "abbreviation": "SC",
+        "state": "South Carolina"
+    },
+    {
+        "abbreviation": "SD",
+        "state": "South Dakota"
+    },
+    {
+        "abbreviation": "TN",
+        "state": "Tennessee"
+    },
+    {
+        "abbreviation": "TX",
+        "state": "Texas"
+    },
+    {
+        "abbreviation": "UT",
+        "state": "Utah"
+    },
+    {
+        "abbreviation": "VT",
+        "state": "Vermont"
+    },
+    {
+        "abbreviation": "VA",
+        "state": "Virginia"
+    },
+    {
+        "abbreviation": "WA",
+        "state": "Washington"
+    },
+    {
+        "abbreviation": "WV",
+        "state": "West Virginia"
+    },
+    {
+        "abbreviation": "WI",
+        "state": "Wisconsin"
+    },
+    {
+        "abbreviation": "WY",
+        "state": "Wyoming"
+    }
+];
+//////erase above?????////
 
-const WEATHER_MAPPINGS = {
-    "0":{
+
+
+
+const weatherMappings = {
+    "0": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: '<i class="fa-solid fa-sun"></i>',
-        pictureClassName: 'sunnyPicture'
+        pictureClassName: 'sunnyPicture',
+        description: "clear sky"
     },
     "1": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: '<i class="fa-solid fa-sun"></i>',
-        pictureClassName: 'sunnyPicture'
+        pictureClassName: 'sunnyPicture',
+        description: "mainly clear"
     },    
     "2": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: '<i class="fa-solid fa-cloud-sun"></i>',
-        pictureClassName: 'cloudSun'
+        pictureClassName: 'cloudSun',
+        description: "partly cloudy"
     },
     "3": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1CKvinIoExZec5pv8OHtzU?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: '<i class="fa-solid fa-cloud"></i>',
-        pictureClassName: 'cloudSun'
+        pictureClassName: 'cloudSun',
+        description: "overcast"
         
     },
     "45": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/28xVpYZV65WjduLWVtamfK?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-water"></i>`,
-        pictureClassName: 'cloudSun'
+        pictureClassName: 'cloudSun',
+        description: "fog"
     },  
     "48": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0Zg4tjgfqw9qzq7lXX2sUM?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-smog"></i>`,
-        pictureClassName: 'cloudSun'
+        pictureClassName: 'cloudSun',
+        description: "depositing rime fog"
     },
     "51": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26AnwFHmManlVCg0toINJc?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "light drizzle"
     },
 
     "53": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2qvToeBdYliw6n0nEsKJQa?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "moderate drizzle"
     },    
     "55": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "dense drizzle"
     },
     "56": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-meatball"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "light freezing drizzle"
     },
     "57": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-meatball"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "dense freezing drizzle"
     },
     "61": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
@@ -379,74 +370,128 @@ const WEATHER_MAPPINGS = {
     "63": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3i25w2HOWoafnTIiWJCL71?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "slight rain"
     },
     "65": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26AnwFHmManlVCg0toINJc?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "moderate rain"
     },
     "66": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "heavy rain"
     },
     "67": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "heavy freezing rain"
     },
     "71": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3OhwaetItNaTXxn0mr9SkN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "slight snowfall"
     },
     "73": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "moderate snowfall"
     },
     "75": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "heavy snowfall"
     },
     "77": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "snow grains"
     },
     "80": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "slight rain showers"
     },
     "81": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "moderate rain showers"
     },
     "82": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
-        pictureClassName: 'rainy'
+        pictureClassName: 'rainy',
+        description: "heavy rain showers"
     },
     "85": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "slight snow showers"
     },
     "86": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-regular fa-snowflake"></i>`,
-        pictureClassName: 'lakeAndTrees'
+        pictureClassName: 'lakeAndTrees',
+        description: "heavy snow showers"
     },
     "95": {
         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
         icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
         pictureClassName: 'thunder'
+        description: "thunderstorm"
+    },
+    "96": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
+        pictureClassName: 'thunder',
+        description: "thunderstorm with slight hail"
+    },
+    "99": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
+        pictureClassName: 'thunder',
+        description: "thunderstorm with heavy hail"
     }
 }
+
+
+////////////////////
+// Global Variables
+////////////////////
+let currentLocation;
+
+// Temperature unit will default to Fahrenheit
+let currentTemperatureUnit = temperature_units[0];
+
+
+/////////////////
+// DOM Selectors
+/////////////////
+const body = document.querySelector("body");
+const formLocation = document.querySelector("#location-form");
+const selectState = document.querySelector("#state");
+const spanCurrentDay = document.querySelector("#current-day");
+const pCurrentLocation = document.querySelector("#location-information");
+const pCurrentTemperature = document.querySelector("#current-temperature");
+const btnFahrenheit = document.querySelector("#fahrenheit-button");
+const btnCelsius = document.querySelector("#celsius-button");
+const pTodayHighLowTemperature = document.querySelector("#today-high-low");
+const pCurrentDescription = document.querySelector("#weather-description");
+const divRow = document.querySelector(".row");
+const btnSubmit = document.querySelector("#location-submit");
+const targetIcon = document.getElementById('currentWeatherIcon');
+const targetPlayer = document.getElementById('spotifyTarget');
 
 
 ///////////////////
@@ -460,7 +505,15 @@ formLocation.addEventListener("submit", (e) => {
 btnFahrenheit.addEventListener("click", () => setTemperatureUnit(0));
 btnCelsius.addEventListener("click", () => setTemperatureUnit(1));
 
-//btnToggleTemperatureUnit.addEventListener("click", () => toggleTemperatureUnit());
+formLocation.addEventListener('mouseover', (e) => mouseOver(e));
+const mouseOver = (e) => {
+    btnSubmit.style.color = "#5C15C8";
+}
+
+formLocation.addEventListener('mouseOut', (e) => mouseOut(e));
+const mouseOut = (e) => {
+    btnSubmit.style.color = "black";
+}
 
 
 formLocation.addEventListener('mouseover', (e) => mouseOver(e))
@@ -485,6 +538,7 @@ const handleLocationSubmit = (e) => {
         const city = e.target.city.value;
         handleLocationSubmitByCityState(city, state);
     }
+    e.target.clear();
 }
 
 const handleLocationSubmitByZipCode = (zipCode) => {
@@ -494,7 +548,7 @@ const handleLocationSubmitByZipCode = (zipCode) => {
             console.log(locationData);
             updateLocationFromZipCode(locationData);
         })
-        .catch(`Could not fetch data for zip code ${zipCode}`);
+        .catch(alert(`${zipCode} not found.`));
 }
 
 const handleLocationSubmitByCityState = (city, state) => {
@@ -505,32 +559,53 @@ const handleLocationSubmitByCityState = (city, state) => {
             console.log(locationData);
             updateLocationFromCityState(locationData, city, state);
         })
-        .catch(`Could not fetch data for ${city}, ${state}`);
-
+        .catch(alert(`${city}, ${state} not found.`));
 }
 
 const updateLocationFromZipCode = (locationData) => {
-    currentLocation.city = locationData.places[0]["place name"];
-    currentLocation.state = locationData.places[0].state;
-    currentLocation.state_abbreviation = locationData.places[0]["state abbreviation"];
-    currentLocation.zip = locationData["post code"];
-    currentLocation.latitude = locationData.places[0].latitude;
-    currentLocation.longitude = locationData.places[0].longitude;
+    let newLocation = {
+        city: locationData.places[0]["place name"],
+        stateAbbreviation: locationData.places[0]["state abbreviation"],
+        stateName: locationData.places[0].state,
+        zipCode: locationData["post code"],
+        latitude: locationData.places[0].latitude,
+        longitude: locationData.places[0].longitude
+    }
+    currentLocation = newLocation;
 
+    patchLocation(currentLocation);
     renderLocation();
     getWeatherData(currentLocation);
 }
 
 const updateLocationFromCityState = (locationData, city, state) => {
-    currentLocation.city = city;
-    currentLocation.state = ""
-    currentLocation.state_abbreviation = state;
-    currentLocation.zip = locationData.places[0]["post code"];
-    currentLocation.latitude = locationData.places[0].latitude;
-    currentLocation.longitude = locationData.places[0].longitude;
+    let newLocation = {
+        city: city,
+        stateAbbreviation: state,
+        stateName: "",
+        zipCode: locationData.places[0]["post code"],
+        latitude: locationData.places[0].latitude,
+        longitude: locationData.places[0].longitude
+    }
+    currentLocation = newLocation;
 
+    patchLocation(currentLocation);
     renderLocation();
     getWeatherData(currentLocation);
+}
+
+const patchLocation = (location) => {
+    fetch("http://localhost:3000/location/1", {
+        method: 'PATCH',
+        headers:{
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+        },
+        body: JSON.stringify(location)
+    })
+    .then(resp => resp.json())
+    .then(location => console.log(location))
+    .catch("Location not updated.");
 }
 
 const getWeatherData = (location) => {
@@ -545,119 +620,84 @@ const getWeatherData = (location) => {
         .catch(`Could not fetch weather data for ${location.city}, ${location.state_abbreviation} ${location.zip}`);
 }
 
-const getDescriptionFromWeatherCode = (weatherData) => {
-    let code = weatherData.current_weather.weathercode;
-    return data.weather_code[code];
-}
-
 const getWeekday = (timestamp) => {
     let numWeekday = new Date(timestamp * 1000).getDay();
-    return data.weekday[numWeekday];
+    return dates.weekday[numWeekday];
 }
 
 const getDate = (timestamp) => {
     let date = new Date(timestamp * 1000);
-    return `${getWeekday(timestamp)}, ${data.month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+    return `${getWeekday(timestamp)}, ${dates.month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
 const setTemperatureUnit = (unit) => {
     if (currentTemperatureUnit !== unit) {
-        currentTemperatureUnit = data.temperature_units[unit];
+        currentTemperatureUnit = temperature_units[unit];
         getWeatherData(currentLocation);
     }
 }
 
-const toggleTemperatureUnit = () => {
-    let indexofArr = data.temperature_units.indexOf(currentTemperatureUnit);
-    
-    currentTemperatureUnit = data.temperature_units[(indexofArr + 1) % 2];
 
-    getWeatherData(currentLocation);
-}
-
-
-/////////////////////
+///////////////////
 // Render Functions
-/////////////////////
+///////////////////
 const renderStates = () => {
-    data.states.forEach(state => {
+    states.forEach(state => {
         let option = document.createElement("option");
         option.value = state.abbreviation;
         option.textContent = state.state;
-        stateDropDown.appendChild(option);
+        selectState.appendChild(option);
     })
 }
 
 const renderLocation = () => {
-    console.log(currentLocation);
-    currentLocationP.textContent = `${currentLocation.city}, ${currentLocation.state_abbreviation}`;
-    console.log(currentLocationP);
+    pCurrentLocation.textContent = `${currentLocation.city}, ${currentLocation.stateAbbreviation}`;
 }
 
 const renderCurrentWeather = (weatherData) => {
-    currentDay.textContent = getDate(weatherData.current_weather.time);
+    const weatherMapping = weatherMappings[weatherData.current_weather.weathercode];
 
-
-
-     currentTemp.textContent = `${weatherData.current_weather.temperature}`
-    currentTempUnit.textContent = `${weatherData.hourly_units.temperature_2m}`;
-    currentDescription.textContent = getDescriptionFromWeatherCode(weatherData);
-
-
-
-    currentTemp.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
+    // Box display
+    spanCurrentDay.textContent = getDate(weatherData.current_weather.time);
+    pCurrentTemperature.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
     
-    btnFahrenheit.textContent = currentTemperatureUnit.abbreviation;
+////erase below??////
+  
+  
+//     btnFahrenheit.textContent = currentTemperatureUnit.abbreviation;
+//     let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
+//     // let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
+//     let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
+//////erase above?/////
+
+  
     let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
-    // let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
-    let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
+    let low = `${weatherData.daily.apparent_temperature_min[0]}${weatherData.hourly_units.temperature_2m}`;
+    pTodayHighLowTemperature.textContent = `${high} / ${low}`;
 
+    targetIcon.innerHTML = weatherMapping.icon;
 
-    renderDailyWeather(weatherData);
+    pCurrentDescription.textContent = weatherMappings[weatherData.current_weather.weathercode].description;
 
-    //////////////////
-    //background images
-    //////////////////
-
-
-     console.log(weatherData)
-    const body = document.getElementById('godbody');
-    const weatherMapping = WEATHER_MAPPINGS[weatherData.current_weather.weathercode]
+    // Background image
     const className= weatherMapping.pictureClassName
-    body.className = WEATHER_MAPPINGS[weatherData.current_weather.weathercode].pictureClassName;
-    console.log({weatherMapping, className})
+    body.className = weatherMappings[weatherData.current_weather.weathercode].pictureClassName;
+    
+    // Spotify
+    targetPlayer.innerHTML = weatherMapping.embededPlayer;
 
-
-
-    //////////////////
-    //Spotify data///
-    ////////////////
-    let {embededPlayer, icon} = WEATHER_MAPPINGS[weatherData.current_weather.weathercode];
-    console.log({embededPlayer, icon, weatherData})
-
-    const iconTarget = document.getElementById('currentWeatherIcon');
-    iconTarget.innerHTML = icon;
-
-    // TODO Take me out when you update the weather mappings :-)
-    if(!embededPlayer){
-        embededPlayer =  WEATHER_MAPPINGS[weatherData.current_weather.weathercode]
-    }
-    // ^^
-
-    const target = document.getElementById('spotifyTarget');
-    target.innerHTML = embededPlayer;
-    console.log(embededPlayer)
+    // Daily Weather
+    renderDailyWeather(weatherData);
 }
 
 const renderDailyWeather = (weatherData) => {
-
-    row.innerHTML = "";
+    divRow.innerHTML = "";
 
     weatherData.daily.time.forEach(day => {
+        let i = weatherData.daily.time.indexOf(day);
 
-        let indexOfArr = weatherData.daily.time.indexOf(day);
-
-        if (indexOfArr > 0) {
+        // Bottom row does not display today's weather
+        if (i > 0) {
 
             let div = document.createElement("div");
             div.className = "col-2 weekday";
@@ -668,22 +708,45 @@ const renderDailyWeather = (weatherData) => {
             let hr = document.createElement("hr");
 
             let icon = document.createElement("i");
-            icon.innerHTML = WEATHER_MAPPINGS[weatherData.daily.weathercode[indexOfArr]].icon;
-            console.log(weatherData.daily.weathercode[indexOfArr]);
+            icon.innerHTML = weatherMappings[weatherData.daily.weathercode[i]].icon;
+            console.log(weatherData.daily.weathercode[i]);
 
-            let temperatureHighLow = document.createElement("p");
-            let high = `${weatherData.daily.apparent_temperature_max[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
-            let low = `${weatherData.daily.apparent_temperature_min[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+///////erase below??////
+//             let temperatureHighLow = document.createElement("p");
+//             let high = `${weatherData.daily.apparent_temperature_max[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+//             let low = `${weatherData.daily.apparent_temperature_min[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
           
-            temperatureHighLow.textContent = `${high} / ${low}`;
+//             temperatureHighLow.textContent = `${high} / ${low}`;
 
-            div.append(strongWeekday, hr, icon, temperatureHighLow);
-            row.appendChild(div);
+//             div.append(strongWeekday, hr, icon, temperatureHighLow);
+//             row.appendChild(div);
+//////erase above?//////
+          
+          
+            let temperatureHigh = document.createElement("p");
+            let temperatureLow = document.createElement("p");
+            temperatureHigh.textContent = `${weatherData.daily.apparent_temperature_max[i]}${weatherData.hourly_units.temperature_2m} /`;
+            temperatureLow.textContent = `${weatherData.daily.apparent_temperature_min[i]}${weatherData.hourly_units.temperature_2m}`;
 
+
+            div.append(strongWeekday, hr, icon, temperatureHigh, temperatureLow);
+            divRow.appendChild(div);
         }
     })
 }
 
+
+////////
+// Init
+////////
+
+fetch("http://localhost:3000/location/1")
+    .then(resp => resp.json())
+    .then(location => {
+        currentLocation = location;
+        renderLocation();
+        getWeatherData(currentLocation);
+    })
+    .catch(console.log(location));
+
 renderStates();
-renderLocation();
-getWeatherData(currentLocation);

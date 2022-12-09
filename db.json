@@ -1,20 +1,21 @@
 {
-  "current_settings": [
+  "location": [
     {
       "id": 1,
-      "location": {
-        "city": "New York City",
-        "stateAbbreviation": "NY",
-        "stateName": "New York",
-        "zipCode": "10004",
-        "latitude": "40.6964",
-        "longitude": "-74.0253"
-      },
-      "temperatureUnit": {
-        "unitName": "Fahrenheit",
-        "unitAbbreviation": "°F",
-        "unitIndex": "0"
-      }
+      "city": "New York City",
+      "stateAbbreviation": "NY",
+      "stateName": "New York",
+      "zipCode": "10004",
+      "latitude": "40.6964",
+      "longitude": "-74.0253"
+    }
+  ],
+  "temperature": [
+    {
+      "id": "1",
+      "unitName": "Fahrenheit",
+      "unitAbbreviation": "°F",
+      "unitIndex": "0"
     }
   ]
 }
