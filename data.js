@@ -29,7 +29,7 @@ const data = {
         "96": "thunderstorm with slight hail",
         "99": "thunderstorm with heavy hail",
     },
-    temperature_units: [
+    temperatureUnits: [
         {
             unit: "fahrenheit",
             abbreviation: "F"

@@ -2,12 +2,12 @@
   "location": [
     {
       "id": 1,
-      "city": "Fort Lauderdale",
-      "stateAbbreviation": "FL",
+      "city": "Denver",
+      "stateAbbreviation": "CO",
       "stateName": "",
-      "zipCode": "33301",
-      "latitude": "26.1216",
-      "longitude": "-80.1288"
+      "zipCode": "80201",
+      "latitude": "39.7263",
+      "longitude": "-104.8568"
     }
   ],
   "temperature": [
