@@ -38,208 +38,259 @@
 //     }
 // ]
 
-// const states = [
-//     {
-//         "abbreviation": "AL",
-//         "state": "Alabama"
-//     },
-//     {
-//         "abbreviation": "AK",
-//         "state": "Alaska"
-//     },
-//     {
-//         "abbreviation": "AZ",
-//         "state": "Arizona"
-//     },
-//     {
-//         "abbreviation": "AR",
-//         "state": "Arkansas"
-//     },
-//     {
-//         "abbreviation": "CA",
-//         "state": "California"
-//     },
-//     {
-//         "abbreviation": "CO",
-//         "state": "Colorado"
-//     },
-//     {
-//         "abbreviation": "CT",
-//         "state": "Connecticut"
-//     },
-//     {
-//         "abbreviation": "DE",
-//         "state": "Delaware"
-//     },
-//     {
-//         "abbreviation": "FL",
-//         "state": "Florida"
-//     },
-//     {
-//         "abbreviation": "GA",
-//         "state": "Georgia"
-//     },
-//     {
-//         "abbreviation": "HI",
-//         "state": "Hawaii"
-//     },
-//     {
-//         "abbreviation": "ID",
-//         "state": "Idaho"
-//     },
-//     {
-//         "abbreviation": "IL",
-//         "state": "Illinois"
-//     },
-//     {
-//         "abbreviation": "IN",
-//         "state": "Indiana"
-//     },
-//     {
-//         "abbreviation": "IA",
-//         "state": "Iowa"
-//     },
-//     {
-//         "abbreviation": "KS",
-//         "state": "Kansas"
-//     },
-//     {
-//         "abbreviation": "KY",
-//         "state": "Kentucky"
-//     },
-//     {
-//         "abbreviation": "LA",
-//         "state": "Louisiana"
-//     },
-//     {
-//         "abbreviation": "ME",
-//         "state": "Maine"
-//     },
-//     {
-//         "abbreviation": "MD",
-//         "state": "Maryland"
-//     },
-//     {
-//         "abbreviation": "MA",
-//         "state": "Massachusetts"
-//     },
-//     {
-//         "abbreviation": "MI",
-//         "state": "Michigan"
-//     },
-//     {
-//         "abbreviation": "MN",
-//         "state": "Minnesota"
-//     },
-//     {
-//         "abbreviation": "MS",
-//         "state": "Mississippi"
-//     },
-//     {
-//         "abbreviation": "MO",
-//         "state": "Missouri"
-//     },
-//     {
-//         "abbreviation": "MT",
-//         "state": "Montana"
-//     },
-//     {
-//         "abbreviation": "NE",
-//         "state": "Nebraska"
-//     },
-//     {
-//         "abbreviation": "NV",
-//         "state": "Nevada"
-//     },
-//     {
-//         "abbreviation": "NH",
-//         "state": "New Hampshire"
-//     },
-//     {
-//         "abbreviation": "NJ",
-//         "state": "New Jersey"
-//     },
-//     {
-//         "abbreviation": "NM",
-//         "state": "New Mexico"
-//     },
-//     {
-//         "abbreviation": "NY",
-//         "state": "New York"
-//     },
-//     {
-//         "abbreviation": "NC",
-//         "state": "North Carolina"
-//     },
-//     {
-//         "abbreviation": "ND",
-//         "state": "North Dakota"
-//     },
-//     {
-//         "abbreviation": "OH",
-//         "state": "Ohio"
-//     },
-//     {
-//         "abbreviation": "OK",
-//         "state": "Oklahoma"
-//     },
-//     {
-//         "abbreviation": "OR",
-//         "state": "Oregon"
-//     },
-//     {
-//         "abbreviation": "PA",
-//         "state": "Pennsylvania"
-//     },
-//     {
-//         "abbreviation": "RI",
-//         "state": "Rhode Island"
-//     },
-//     {
-//         "abbreviation": "SC",
-//         "state": "South Carolina"
-//     },
-//     {
-//         "abbreviation": "SD",
-//         "state": "South Dakota"
-//     },
-//     {
-//         "abbreviation": "TN",
-//         "state": "Tennessee"
-//     },
-//     {
-//         "abbreviation": "TX",
-//         "state": "Texas"
-//     },
-//     {
-//         "abbreviation": "UT",
-//         "state": "Utah"
-//     },
-//     {
-//         "abbreviation": "VT",
-//         "state": "Vermont"
-//     },
-//     {
-//         "abbreviation": "VA",
-//         "state": "Virginia"
-//     },
-//     {
-//         "abbreviation": "WA",
-//         "state": "Washington"
-//     },
-//     {
-//         "abbreviation": "WV",
-//         "state": "West Virginia"
-//     },
-//     {
-//         "abbreviation": "WI",
-//         "state": "Wisconsin"
-//     },
-//     {
-//         "abbreviation": "WY",
-//         "state": "Wyoming"
-//     }
-// ];
+/////////erase below??////
+
+
+
+
+////////////////////
+// Global Variables
+////////////////////
+let currentLocation = {
+    city: "New York City",
+    state: "New York",
+    state_abbreviation: "NY",
+    zip: "10004",
+    latitude: "40.6964",
+    longitude: "-74.0253"
+};
+
+// Temperature unit will default to Fahrenheit
+let currentTemperatureUnit = data.temperature_units[0];
+
+
+//////////////////
+// DOM Selectors
+//////////////////
+const temperatures = document.querySelectorAll(".temperature-number");
+const temperatureUnits = document.querySelectorAll(".temperature-unit");
+const formLocation = document.querySelector("#location-form");
+const stateDropDown = document.querySelector("#state");
+const currentDay = document.querySelector("#current-day");
+const currentLocationP = document.querySelector("#location-information");
+const currentTemp = document.querySelector("#current-temp");
+const currentTempUnit = document.querySelector("#current-temp-unit");
+const btnFahrenheit = document.querySelector("#fahrenheit-button");
+const btnCelsius = document.querySelector("#celsius-button");
+// const btnToggleTemperatureUnit = document.querySelector("#temperature-toggle");
+const currentHighLowTemperature = document.querySelector("#today-high-low");
+const currentDescription = document.querySelector("#current-description");
+const row = document.querySelector(".row");
+
+const inputSubmitButton = document.querySelector("#location-submit")
+const body = document.querySelector("body");
+
+
+////////////////////////
+//Spotify Songs
+///////////////////////
+=======
+const states = [
+    {
+        "abbreviation": "AL",
+        "state": "Alabama"
+    },
+    {
+        "abbreviation": "AK",
+        "state": "Alaska"
+    },
+    {
+        "abbreviation": "AZ",
+        "state": "Arizona"
+    },
+    {
+        "abbreviation": "AR",
+        "state": "Arkansas"
+    },
+    {
+        "abbreviation": "CA",
+        "state": "California"
+    },
+    {
+        "abbreviation": "CO",
+        "state": "Colorado"
+    },
+    {
+        "abbreviation": "CT",
+        "state": "Connecticut"
+    },
+    {
+        "abbreviation": "DE",
+        "state": "Delaware"
+    },
+    {
+        "abbreviation": "FL",
+        "state": "Florida"
+    },
+    {
+        "abbreviation": "GA",
+        "state": "Georgia"
+    },
+    {
+        "abbreviation": "HI",
+        "state": "Hawaii"
+    },
+    {
+        "abbreviation": "ID",
+        "state": "Idaho"
+    },
+    {
+        "abbreviation": "IL",
+        "state": "Illinois"
+    },
+    {
+        "abbreviation": "IN",
+        "state": "Indiana"
+    },
+    {
+        "abbreviation": "IA",
+        "state": "Iowa"
+    },
+    {
+        "abbreviation": "KS",
+        "state": "Kansas"
+    },
+    {
+        "abbreviation": "KY",
+        "state": "Kentucky"
+    },
+    {
+        "abbreviation": "LA",
+        "state": "Louisiana"
+    },
+    {
+        "abbreviation": "ME",
+        "state": "Maine"
+    },
+    {
+        "abbreviation": "MD",
+        "state": "Maryland"
+    },
+    {
+        "abbreviation": "MA",
+        "state": "Massachusetts"
+    },
+    {
+        "abbreviation": "MI",
+        "state": "Michigan"
+    },
+    {
+        "abbreviation": "MN",
+        "state": "Minnesota"
+    },
+    {
+        "abbreviation": "MS",
+        "state": "Mississippi"
+    },
+    {
+        "abbreviation": "MO",
+        "state": "Missouri"
+    },
+    {
+        "abbreviation": "MT",
+        "state": "Montana"
+    },
+    {
+        "abbreviation": "NE",
+        "state": "Nebraska"
+    },
+    {
+        "abbreviation": "NV",
+        "state": "Nevada"
+    },
+    {
+        "abbreviation": "NH",
+        "state": "New Hampshire"
+    },
+    {
+        "abbreviation": "NJ",
+        "state": "New Jersey"
+    },
+    {
+        "abbreviation": "NM",
+        "state": "New Mexico"
+    },
+    {
+        "abbreviation": "NY",
+        "state": "New York"
+    },
+    {
+        "abbreviation": "NC",
+        "state": "North Carolina"
+    },
+    {
+        "abbreviation": "ND",
+        "state": "North Dakota"
+    },
+    {
+        "abbreviation": "OH",
+        "state": "Ohio"
+    },
+    {
+        "abbreviation": "OK",
+        "state": "Oklahoma"
+    },
+    {
+        "abbreviation": "OR",
+        "state": "Oregon"
+    },
+    {
+        "abbreviation": "PA",
+        "state": "Pennsylvania"
+    },
+    {
+        "abbreviation": "RI",
+        "state": "Rhode Island"
+    },
+    {
+        "abbreviation": "SC",
+        "state": "South Carolina"
+    },
+    {
+        "abbreviation": "SD",
+        "state": "South Dakota"
+    },
+    {
+        "abbreviation": "TN",
+        "state": "Tennessee"
+    },
+    {
+        "abbreviation": "TX",
+        "state": "Texas"
+    },
+    {
+        "abbreviation": "UT",
+        "state": "Utah"
+    },
+    {
+        "abbreviation": "VT",
+        "state": "Vermont"
+    },
+    {
+        "abbreviation": "VA",
+        "state": "Virginia"
+    },
+    {
+        "abbreviation": "WA",
+        "state": "Washington"
+    },
+    {
+        "abbreviation": "WV",
+        "state": "West Virginia"
+    },
+    {
+        "abbreviation": "WI",
+        "state": "Wisconsin"
+    },
+    {
+        "abbreviation": "WY",
+        "state": "Wyoming"
+    }
+];
+//////erase above?????////
+
+
+
 
 // const weatherMappings = {
 //     "0": {
@@ -286,132 +337,132 @@
 //         description: "light drizzle"
 //     },
 
-//     "53": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2qvToeBdYliw6n0nEsKJQa?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-//         pictureClassName: 'rainy',
-//         description: "moderate drizzle"
-//     },    
-//     "55": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
-//         pictureClassName: 'rainy',
-//         description: "dense drizzle"
-//     },
-//     "56": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-meatball"></i>`,
-//         pictureClassName: 'rainy',
-//         description: "light freezing drizzle"
-//     },
-//     "57": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-meatball"></i>`,
-//         pictureClassName: 'rainy',
-//         description: "dense freezing drizzle"
-//     },
-//     "61": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-//         pictureClassName: 'rainy'
-//     },
-//     "63": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3i25w2HOWoafnTIiWJCL71?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-//         pictureClassName: 'rainy',
-//         description: "slight rain"
-//     },
-//     "65": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26AnwFHmManlVCg0toINJc?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
-//         pictureClassName: 'rainy',
-//         description: "moderate rain"
-//     },
-//     "66": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-regular fa-snowflake"></i>`,
-//         pictureClassName: 'lakeAndTrees',
-//         description: "heavy rain"
-//     },
-//     "67": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-regular fa-snowflake"></i>`,
-//         pictureClassName: 'lakeAndTrees',
-//         description: "heavy freezing rain"
-//     },
-//     "71": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3OhwaetItNaTXxn0mr9SkN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-regular fa-snowflake"></i>`,
-//         pictureClassName: 'lakeAndTrees',
-//         description: "slight snowfall"
-//     },
-//     "73": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-regular fa-snowflake"></i>`,
-//         pictureClassName: 'lakeAndTrees',
-//         description: "moderate snowfall"
-//     },
-//     "75": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-regular fa-snowflake"></i>`,
-//         pictureClassName: 'lakeAndTrees',
-//         description: "heavy snowfall"
-//     },
-//     "77": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-regular fa-snowflake"></i>`,
-//         pictureClassName: 'lakeAndTrees',
-//         description: "snow grains"
-//     },
-//     "80": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-//         pictureClassName: 'rainy',
-//         description: "slight rain showers"
-//     },
-//     "81": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-rain"></i>`,
-//         pictureClassName: 'rainy',
-//         description: "moderate rain showers"
-//     },
-//     "82": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
-//         pictureClassName: 'rainy',
-//         description: "heavy rain showers"
-//     },
-//     "85": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-regular fa-snowflake"></i>`,
-//         pictureClassName: 'lakeAndTrees',
-//         description: "slight snow showers"
-//     },
-//     "86": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-regular fa-snowflake"></i>`,
-//         pictureClassName: 'lakeAndTrees',
-//         description: "heavy snow showers"
-//     },
-//     "95": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
-//         pictureClassName: 'lakeAndTrees',
-//         description: "thunderstorm"
-//     },
-//     "96": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
-//         pictureClassName: 'lakeAndTrees',
-//         description: "thunderstorm with slight hail"
-//     },
-//     "99": {
-//         embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
-//         icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
-//         pictureClassName: 'lakeAndTrees',
-//         description: "thunderstorm with heavy hail"
-//     }
-// }
+    "53": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2qvToeBdYliw6n0nEsKJQa?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`,
+        pictureClassName: 'rainy',
+        description: "moderate drizzle"
+    },    
+    "55": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
+        pictureClassName: 'rainy',
+        description: "dense drizzle"
+    },
+    "56": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-meatball"></i>`,
+        pictureClassName: 'rainy',
+        description: "light freezing drizzle"
+    },
+    "57": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-meatball"></i>`,
+        pictureClassName: 'rainy',
+        description: "dense freezing drizzle"
+    },
+    "61": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zJMFf0EzbGCpL0zROfmVF?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`,
+        pictureClassName: 'rainy'
+    },
+    "63": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3i25w2HOWoafnTIiWJCL71?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`,
+        pictureClassName: 'rainy',
+        description: "slight rain"
+    },
+    "65": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26AnwFHmManlVCg0toINJc?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
+        pictureClassName: 'rainy',
+        description: "moderate rain"
+    },
+    "66": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees',
+        description: "heavy rain"
+    },
+    "67": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3LGsgpx4TfxhXbr07OFKqs?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees',
+        description: "heavy freezing rain"
+    },
+    "71": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3OhwaetItNaTXxn0mr9SkN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees',
+        description: "slight snowfall"
+    },
+    "73": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees',
+        description: "moderate snowfall"
+    },
+    "75": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees',
+        description: "heavy snowfall"
+    },
+    "77": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees',
+        description: "snow grains"
+    },
+    "80": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`,
+        pictureClassName: 'rainy',
+        description: "slight rain showers"
+    },
+    "81": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-rain"></i>`,
+        pictureClassName: 'rainy',
+        description: "moderate rain showers"
+    },
+    "82": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AKUOaCRcoKTFnVI9LtsrN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-showers-heavy"></i>`,
+        pictureClassName: 'rainy',
+        description: "heavy rain showers"
+    },
+    "85": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees',
+        description: "slight snow showers"
+    },
+    "86": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GegHVxeozw3rdjte45Bfx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-regular fa-snowflake"></i>`,
+        pictureClassName: 'lakeAndTrees',
+        description: "heavy snow showers"
+    },
+    "95": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
+        pictureClassName: 'thunder'
+        description: "thunderstorm"
+    },
+    "96": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
+        pictureClassName: 'thunder',
+        description: "thunderstorm with slight hail"
+    },
+    "99": {
+        embededPlayer: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1zB4vmk8tFRmM9UULNzbLB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+        icon: `<i class="fa-solid fa-cloud-bolt"></i>`,
+        pictureClassName: 'thunder',
+        description: "thunderstorm with heavy hail"
+    }
+}
 
 
 // ////////////////////
@@ -593,16 +644,50 @@
 //     pCurrentLocation.textContent = `${currentLocation.city}, ${currentLocation.stateAbbreviation}`;
 // }
 
-// const renderCurrentWeather = (weatherData) => {
-//     const weatherMapping = weatherMappings[weatherData.current_weather.weathercode];
+const renderCurrentWeather = (weatherData) => {
 
-//     // Box display
-//     spanCurrentDay.textContent = getDate(weatherData.current_weather.time);
-//     pCurrentTemperature.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
+    currentDay.textContent = getDate(weatherData.current_weather.time);
+
+
+
+    //  currentTemp.textContent = `${weatherData.current_weather.temperature}`
+    // currentTempUnit.textContent = `${weatherData.hourly_units.temperature_2m}`;
+    currentDescription.textContent = getDescriptionFromWeatherCode(weatherData);
+
+
+
+    currentTemp.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
+    let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;    
+    let low = `${weatherData.daily.apparent_temperature_min[0]}${weatherData.hourly_units.temperature_2m}`;   
+    currentHighLowTemperature.textContent = `${high} / ${low}`;
+
     
-//     let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
-//     let low = `${weatherData.daily.apparent_temperature_min[0]}${weatherData.hourly_units.temperature_2m}`;
-//     pTodayHighLowTemperature.textContent = `${high} / ${low}`;
+    // btnFahrenheit.textContent = currentTemperatureUnit.abbreviation;
+    // let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
+    // let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
+    // let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
+
+
+  //const weatherMapping = weatherMappings[weatherData.current_weather.weathercode];
+
+  //Box display
+  //spanCurrentDay.textContent = getDate(weatherData.current_weather.time);
+  //pCurrentTemperature.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
+    
+////erase below??////
+  
+  
+//btnFahrenheit.textContent = currentTemperatureUnit.abbreviation;
+//let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
+//let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
+//let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
+//erase above?/////
+
+  
+//let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
+//let low = `${weatherData.daily.apparent_temperature_min[0]}${weatherData.hourly_units.temperature_2m}`;
+//pTodayHighLowTemperature.textContent = `${high} / ${low}`;
+
 
 //     targetIcon.innerHTML = weatherMapping.icon;
 
@@ -639,10 +724,23 @@
 //             let icon = document.createElement("i");
 //             icon.innerHTML = weatherMappings[weatherData.daily.weathercode[i]].icon;
 
-//             let temperatureHigh = document.createElement("p");
-//             let temperatureLow = document.createElement("p");
-//             temperatureHigh.textContent = `${weatherData.daily.apparent_temperature_max[i]}${weatherData.hourly_units.temperature_2m} /`;
-//             temperatureLow.textContent = `${weatherData.daily.apparent_temperature_min[i]}${weatherData.hourly_units.temperature_2m}`;
+///////erase below??////
+//             let temperatureHighLow = document.createElement("p");
+//             let high = `${weatherData.daily.apparent_temperature_max[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+//             let low = `${weatherData.daily.apparent_temperature_min[indexOfArr]} ${weatherData.hourly_units.temperature_2m}`;
+          
+//             temperatureHighLow.textContent = `${high} / ${low}`;
+
+//             div.append(strongWeekday, hr, icon, temperatureHighLow);
+//             row.appendChild(div);
+//////erase above?//////
+          
+          
+            let temperatureHigh = document.createElement("p");
+            let temperatureLow = document.createElement("p");
+            temperatureHigh.textContent = `${weatherData.daily.apparent_temperature_max[i]}${weatherData.hourly_units.temperature_2m} /`;
+            temperatureLow.textContent = `${weatherData.daily.apparent_temperature_min[i]}${weatherData.hourly_units.temperature_2m}`;
+
 
 //             div.append(strongWeekday, hr, icon, temperatureHigh, temperatureLow);
 //             divRow.appendChild(div);
