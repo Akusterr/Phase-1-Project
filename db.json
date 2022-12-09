@@ -2,12 +2,12 @@
   "location": [
     {
       "id": 1,
-      "city": "Seattle",
-      "stateAbbreviation": "WA",
+      "city": "Fort Lauderdale",
+      "stateAbbreviation": "FL",
       "stateName": "",
-      "zipCode": "98060",
-      "latitude": "47.4323",
-      "longitude": "-121.8034"
+      "zipCode": "33301",
+      "latitude": "26.1216",
+      "longitude": "-80.1288"
     }
   ],
   "temperature": [
