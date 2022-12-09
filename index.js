@@ -78,7 +78,6 @@ const currentDescription = document.querySelector("#current-description");
 const row = document.querySelector(".row");
 
 const inputSubmitButton = document.querySelector("#location-submit")
-
 const body = document.querySelector("body");
 
 
@@ -655,25 +654,49 @@ const renderLocation = () => {
 }
 
 const renderCurrentWeather = (weatherData) => {
-    const weatherMapping = weatherMappings[weatherData.current_weather.weathercode];
 
-    // Box display
-    spanCurrentDay.textContent = getDate(weatherData.current_weather.time);
-    pCurrentTemperature.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
+    currentDay.textContent = getDate(weatherData.current_weather.time);
+
+
+
+    //  currentTemp.textContent = `${weatherData.current_weather.temperature}`
+    // currentTempUnit.textContent = `${weatherData.hourly_units.temperature_2m}`;
+    currentDescription.textContent = getDescriptionFromWeatherCode(weatherData);
+
+
+
+    currentTemp.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
+    let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;    
+    let low = `${weatherData.daily.apparent_temperature_min[0]}${weatherData.hourly_units.temperature_2m}`;   
+    currentHighLowTemperature.textContent = `${high} / ${low}`;
+
+    
+    // btnFahrenheit.textContent = currentTemperatureUnit.abbreviation;
+    // let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
+    // let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
+    // let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
+
+
+  //const weatherMapping = weatherMappings[weatherData.current_weather.weathercode];
+
+  //Box display
+  //spanCurrentDay.textContent = getDate(weatherData.current_weather.time);
+  //pCurrentTemperature.textContent = `${weatherData.current_weather.temperature}${weatherData.hourly_units.temperature_2m}`;
     
 ////erase below??////
   
   
-//     btnFahrenheit.textContent = currentTemperatureUnit.abbreviation;
-//     let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
-//     // let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
-//     let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
-//////erase above?/////
+//btnFahrenheit.textContent = currentTemperatureUnit.abbreviation;
+//let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
+//let low = `${weatherData.daily.apparent_temperature_min[0]}${String.fromCodePoint(176)}`;
+//let low = `${weatherData.daily.apparent_temperature_min[0]} ${weatherData.hourly_units.temperature_2m}`;
+//erase above?/////
 
   
-    let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
-    let low = `${weatherData.daily.apparent_temperature_min[0]}${weatherData.hourly_units.temperature_2m}`;
-    pTodayHighLowTemperature.textContent = `${high} / ${low}`;
+//let high = `${weatherData.daily.apparent_temperature_max[0]}${weatherData.hourly_units.temperature_2m}`;
+//let low = `${weatherData.daily.apparent_temperature_min[0]}${weatherData.hourly_units.temperature_2m}`;
+//pTodayHighLowTemperature.textContent = `${high} / ${low}`;
+
 
     targetIcon.innerHTML = weatherMapping.icon;
 
