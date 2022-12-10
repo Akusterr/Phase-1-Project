@@ -416,7 +416,14 @@ const weatherMappings = {
 ////////////////////
 // Global Variables
 ////////////////////
-let currentLocation;
+let currentLocation = {
+    city: "New York City",
+    stateAbbreviation: "NY",
+    stateName: "New York",
+    zipCode: "80201",
+    latitude: "39.7263",
+    longitude: "-104.8568"
+};
 
 // Temperature unit will default to Fahrenheit
 let currentTemperatureUnit = temperature_units[0];
@@ -656,6 +663,9 @@ fetch("http://localhost:3000/location/1")
         renderLocation();
         getWeatherData(currentLocation);
     })
-    .catch(console.log(location));
+    .catch(() => {
+        renderLocation();
+        getWeatherData(currentLocation);
+    });
 
 renderStates();
